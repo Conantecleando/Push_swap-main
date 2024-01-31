@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:57:03 by daroldan          #+#    #+#             */
-/*   Updated: 2024/01/22 00:46:56 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/01/31 23:47:05 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_stack	*new_stack(long value)
 	return (temp);
 }
 //Esta funcion inserta nodos con los dos valores dados al final de la lista
-void	insert_end_list(t_stack **head, long value, int index)
+void	insert_end_list(t_stack **head, long value)
 {
 	t_stack	*temp;
 
@@ -42,8 +42,9 @@ void	insert_end_list(t_stack **head, long value, int index)
 			temp = temp->next;
 		}
 		temp->value = value;
+		temp->prev = next;
 		temp->next = NULL;
-		return (temp);
+			return (temp);
 	}
 }
 /*void print_list(void *t_stack)

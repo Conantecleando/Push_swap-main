@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_nodes.c                                      :+:      :+:    :+:   */
+/*   utils_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 21:53:22 by davidrol          #+#    #+#             */
+/*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
 /*   Updated: 2024/01/31 23:47:05 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void free_stack(t_stack **stack)
+
+t_stack *trans_list(int argc, char **argv[])
 {
-    t_stack *temp;
+    t_stack *temp
+    int i;
 
-    stack = (t_stack *)malloc(sizeof(t_stack));
-
-    if(!(*stack))
-        return;
-    while(stack)
+    temp = (t_stack *)mallloc(sizeof(t_stack));
+	if (!temp)
+		return (NULL);
+    if (argc == 1)
+        exit(0);
+    i = 0;
+    while (i < argc -1)
     {
-        temp = *stack;
-        *stack = (*stack)->next;
-        free(temp)
+        
     }
-    *stack = NULL;
-    return;
+    
+
+
 }

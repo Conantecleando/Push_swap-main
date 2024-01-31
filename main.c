@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_nodes.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/14 21:53:22 by davidrol          #+#    #+#             */
-/*   Updated: 2024/01/31 23:47:05 by davidrol         ###   ########.fr       */
+/*   Created: 2024/01/31 21:49:35 by davidrol          #+#    #+#             */
+/*   Updated: 2024/01/31 23:13:23 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-void free_stack(t_stack **stack)
+#include "push_swap.h"typedef struct index
 {
-    t_stack *temp;
+	
+};
 
-    stack = (t_stack *)malloc(sizeof(t_stack));
+//Con los argumentos creamos los dos stack
 
-    if(!(*stack))
-        return;
-    while(stack)
-    {
-        temp = *stack;
-        *stack = (*stack)->next;
-        free(temp)
-    }
-    *stack = NULL;
-    return;
+int main(int argc, char **argv)
+{
+    t_stack *stack_a;
+    t_stack *stack_b;
+
+    t_stack_b = NULL;
+    if (argc == 0)
+        return (0);
+    stack_a = //aqui hay que hacer o un split o
+    // pasar cada uno a argv a un nodo
+
 }
