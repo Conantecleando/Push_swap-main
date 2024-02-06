@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 00:02:58 by davidrol          #+#    #+#             */
-/*   Updated: 2024/02/05 19:17:47 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/02/05 19:54:36 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,12 @@ i = 0;
     }
 }
 
-void double_number (**)
+void double_number (**stack)
+{
+    *stack->value
+    while (!stack->next)
+    {
+
+    }
+
+}

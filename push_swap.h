@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/01/31 23:18:21 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:18:52 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <limits.h>
-# include <stbool.h>
+# include <stdbool.h>
 
 typedef struct stack
 {
@@ -29,6 +29,14 @@ typedef struct stack
 	struct stack	*next;
 	struct stack	*prev;	
 }	t_stack;
+
+typedef struct index
+{
+	long			target;
+	bool 			min;
+	bool			max;
+	struct order	*next;		
+}t_index;
 
 t_stack	*new_stack(long value);
 void	swap_stack(t_stack **stack);
