@@ -6,11 +6,12 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:49:35 by davidrol          #+#    #+#             */
-/*   Updated: 2024/02/06 11:19:22 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/02/06 12:08:50 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 //Con los argumentos creamos los dos stack
 int main(int argc, char **argv)
 {
@@ -23,7 +24,8 @@ int main(int argc, char **argv)
     t_stack_b = NULL;
     if (argc == 0)
         return (0);
-    stack_a = new_stack()
+    stack_a = new_stack(NULL);
+
     while ((ft_split(*argv, " "))[i])
     {
         stack_a->value = (ft_split(*argv, " "))[i];
