@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 00:02:58 by davidrol          #+#    #+#             */
-/*   Updated: 2024/02/05 19:54:36 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/02/14 23:23:14 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,23 @@ i = 0;
     }
 }
 
-void double_number (**stack)
+void double_number_error(list **char)
 {
-    *stack->value
-    while (!stack->next)
+    char t;
+    int  i;
+    int  z;
+    
+    i = 0;
+    while(list[i])
     {
-
+        z = 0;
+        t = list[i]
+        if(list[z] != t)
+            z++;
+        else
+        {
+            write(2, 'Error double type\n', 18);
+            exit(EXIT_FAILURE);
+        }
     }
-
 }
