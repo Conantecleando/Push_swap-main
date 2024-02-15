@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 00:02:58 by davidrol          #+#    #+#             */
-/*   Updated: 2024/02/14 23:23:14 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/02/14 23:27:00 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void double_number_error(list **char)
             write(2, 'Error double type\n', 18);
             exit(EXIT_FAILURE);
         }
+     i++;
     }
 }
