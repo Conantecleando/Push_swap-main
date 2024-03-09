@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:57:03 by daroldan          #+#    #+#             */
-/*   Updated: 2024/01/31 23:47:05 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/04 21:14:46 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ t_stack	*new_stack(long value)
 	fisrt = temp;
 	fisrt->value = value;
 	first->next = NULL;
-	first->prev = NULL;
 	return (temp);
 }
 //Esta funcion inserta nodos con los dos valores dados al final de la lista

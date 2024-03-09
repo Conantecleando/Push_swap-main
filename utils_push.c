@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/02/14 23:22:55 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/05 01:20:03 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ char **trans_list(int argc, char **argv[])
     }
     type_error(list);
     double_number_error(list);
+        return (list);
 }
 
 long ft_atol(char *n)
@@ -54,4 +55,21 @@ long ft_atol(char *n)
         n++;
     }
     return (l * i);
+}
+
+int stack_len(t_stack **stack)
+{
+    int i;
+    t_stack *temp;
+
+    if(!(*stack))
+        return(0);
+    temp = stack;
+    i = 0;
+    while(temp)
+    {
+        i++;
+        temp = temp->next;
+    }
+    return (i);
 }

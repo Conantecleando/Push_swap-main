@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/02/06 11:18:52 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/05 01:22:26 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ typedef struct stack
 	int				index;
 	long			target;
 	long			value;
-	bool			min;
-	bool			max;
 	struct stack	*next;
 	struct stack	*prev;	
 }	t_stack;

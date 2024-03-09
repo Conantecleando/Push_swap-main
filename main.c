@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:49:35 by davidrol          #+#    #+#             */
-/*   Updated: 2024/02/06 12:08:50 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/05 01:31:27 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ int main(int argc, char **argv)
     t_stack *stack_a;
     t_stack *stack_b;
     int     i;
+
+    if (argc = 1 || (argc == 2 && !argv[1][0]))
+        return (1);
+    else if (argv >= 2)
+        argv = trans_list(argc, *argv[]);
+        
     stack_a = (t_stack *)malloc(sizeof(t_stack));
     if(!stack_a)
         return(NULL);

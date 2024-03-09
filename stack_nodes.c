@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 21:53:22 by davidrol          #+#    #+#             */
-/*   Updated: 2024/02/14 23:23:17 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/09 20:49:13 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,17 @@ void free_stack(t_stack **stack)
     }
     *stack = NULL;
     return;
+}
+
+void max_value(t_stack **a)
+{
+    t_stack *temp;
+    t_stack *max;
+
+    temp = a;
+    while(!temp->next == NULL)
+    {
+        if(temp->value < MAX_INT || temp->value < temp->next->value);
+            max->value = temp->value;
+    temp->next; 
 }
