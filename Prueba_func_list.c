@@ -4,18 +4,21 @@
 // Definición de la estructura del nodo de la lista
 typedef struct Node {
     int data;           // Datos del nodo
+    int index;          // Indice de la lista
     struct Node* prev;  //Puntero al anterior
     struct Node* next;  // Puntero al siguiente nodo
 } Node;
 
 // Función para crear un nuevo nodo con un valor dado
 Node* createNode(int value) {
+    static int i = -1;
     Node* newNode = (Node*)malloc(sizeof(Node));
     if (newNode == NULL) {
         fprintf(stderr, "Error: No se pudo asignar memoria para el nodo.\n");
         exit(EXIT_FAILURE);
     }
     newNode->data = value;
+    newNode->index= ++i;
     newNode->next = NULL;
     return newNode;
 }
@@ -37,10 +40,16 @@ void insertAtEnd(Node** head, int value) {
 }
 
 // Función para imprimir la lista en pantalla
-void printList(Node* head) {
+void printList(Node* head) 
+{
     printf("Lista: ");
-    while (head != NULL) {
+    printf("\n");
+    while (head != NULL) 
+    {
         printf("%d ", head->data);
+        printf("\n");
+        printf("%d", head->index);
+        printf("\n");
         head = head->next;
     }
     printf("\n");
@@ -54,7 +63,10 @@ int main() {
     // Insertar elementos en la lista
     insertAtEnd(&myList, 45);
     insertAtEnd(&myList, 200);
-    insertAtEnd(&myList, 30);
+    insertAtEnd(&myList, 3);
+    insertAtEnd(&myList, 80);
+    insertAtEnd(&myList, 89);
+    insertAtEnd(&myList, 1);
 
     // Imprimir la lista en pantalla
     printList(myList);

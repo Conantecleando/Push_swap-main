@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:49:35 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/10 17:06:05 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/10 22:26:31 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,6 @@ int	main(int argc, char **argv)
 	stack_a = new_stack(NULL);
 	i = -1;
 	while (list[++i])
-	{
-		stack_a->value = list[i];
-		stack_a->index = i;
-		stack_a->next = NULL;
-		}
-
+		insert_end_list(stack_a, atol(list[i]))
+	printf(%d, stack_a->value)
 }

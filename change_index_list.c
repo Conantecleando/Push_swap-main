@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 00:29:44 by daroldan          #+#    #+#             */
-/*   Updated: 2024/01/14 19:38:01 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/10 22:20:57 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	plus_index_list(t_stack **stack)
 {
 	t_stack	*temp;
 
-	if (!**stack || **stack->next != NULL)
+	if (!*stack || *stack->next != NULL)
 		return ;
-	temp = **stack;
+	temp = *stack;
 	while (temp->next)
 	{
 		temp->index = (temp)->index++;
@@ -31,9 +31,9 @@ void	minus_index_list(t_stack **stack)
 {
 	t_stack	*temp;
 
-	if (!**stack || **stack->next = NULL)
+	if (!*stack || *stack->next = NULL)
 		return ;
-	temp = **stack;
+	temp = *stack;
 	while (temp->next)
 	{
 		temp->index = (temp)->index--;

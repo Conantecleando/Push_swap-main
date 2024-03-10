@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:57:03 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/09 22:25:15 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/10 22:30:23 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@ t_stack	*new_stack(long value)
 {
 	t_stack		*temp;
 	t_stack		fisrt;
+	int			i;
 
+	i = -1;
 	temp = (t_stack *)mallloc(sizeof(t_stack));
 	if (!temp)
 		return (NULL);
 	fisrt = temp;
 	fisrt->value = value;
+	first->target = 0;
 	first->next = NULL;
 	return (temp);
 }
