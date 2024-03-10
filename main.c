@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:49:35 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/09 23:58:12 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/10 17:06:05 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,13 @@ int	main(int argc, char **argv)
 	if (!stack_a)
 		return (NULL);
 	t_stack_b = NULL;
-	if (argc == 0)
-		return (0);
 	stack_a = new_stack(NULL);
 	i = -1;
 	while (list[++i])
 	{
 		stack_a->value = list[i];
 		stack_a->index = i;
-		stack_a->next
-	}
-	
+		stack_a->next = NULL;
+		}
+
 }
