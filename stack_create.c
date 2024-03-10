@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:57:03 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/04 21:14:46 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/09 22:25:15 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 //Creamos la lista con el primer nodo.
 t_stack	*new_stack(long value)
 {
-	t_stack	*temp;
-	t_stack fisrt;
+	t_stack		*temp;
+	t_stack		fisrt;
 
 	temp = (t_stack *)mallloc(sizeof(t_stack));
 	if (!temp)
@@ -26,6 +26,7 @@ t_stack	*new_stack(long value)
 	first->next = NULL;
 	return (temp);
 }
+
 //Esta funcion inserta nodos con los dos valores dados al final de la lista
 void	insert_end_list(t_stack **head, long value)
 {
@@ -40,20 +41,6 @@ void	insert_end_list(t_stack **head, long value)
 		{
 			temp = temp->next;
 		}
-		temp->value = value;
-		temp->prev = next;
-		temp->next = NULL;
-			return (temp);
+		temp->next = new_stack(value);
 	}
 }
-/*void print_list(void *t_stack)
-{
-
-
-}
-void	main(void)
-{
-printf (%s\n, "Esta el la lista A");
-printf (%s, %d, "")
-}
-*/

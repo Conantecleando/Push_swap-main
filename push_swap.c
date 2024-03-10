@@ -3,29 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
+/*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:48:35 by daroldan          #+#    #+#             */
-/*   Updated: 2023/12/20 20:12:45 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/03/09 23:59:36 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	erase_stack(void *t_stack)
+void	erase_stack(t_stack **stack)
 {
 	t_stack	*temp;
 
-	if (!stack)
+	if (!*stack)
 		return ;
-	while (stack)
+	while (*stack)
 	{
-		t_stack->value = temp;
-		t_stack = (t_stack)->next;
+		temp = (*stack)->next;
 		free(temp);
 	}
-	t_stack = NULL;
-	return ;
+	*stack = NULL;
 }
 
 void	t_stack	clear_stack(t_stack **stack)
@@ -92,7 +90,6 @@ void	main(void)
 	t_stack *temp = NULL;
 
 	new_stack(45)
-
 	printf(%s/n, "Esta es la lista");
 	while (stack->next)
 	{

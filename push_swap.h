@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/05 01:22:26 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/09 22:13:38 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ typedef struct stack
 	long			target;
 	long			value;
 	struct stack	*next;
-	struct stack	*prev;	
-}	t_stack;
+	}	t_stack;
 
 typedef struct index
 {

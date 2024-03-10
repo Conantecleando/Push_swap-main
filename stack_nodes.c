@@ -6,39 +6,39 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 21:53:22 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/09 20:49:13 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/09 22:57:31 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void free_stack(t_stack **stack)
+void	free_stack(t_stack **stack)
 {
-    t_stack *temp;
+	t_stack	*temp;
 
-    stack = (t_stack *)malloc(sizeof(t_stack));
-
-    if(!(*stack))
-        return;
-    while(stack)
-    {
-        temp = *stack;
-        *stack = (*stack)->next;
-        free(temp)
-    }
-    *stack = NULL;
-    return;
+	if (! (*stack))
+		return ;
+	while (stack)
+	{
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
+	}
+	*stack = NULL;
 }
 
-void max_value(t_stack **a)
+long	find_max_value(t_stack **stack)
 {
-    t_stack *temp;
-    t_stack *max;
+	t_stack	*temp;
+	long	max_value;
 
-    temp = a;
-    while(!temp->next == NULL)
-    {
-        if(temp->value < MAX_INT || temp->value < temp->next->value);
-            max->value = temp->value;
-    temp->next; 
+	max_value = LONG_MIN;
+	temp = *stack;
+	while (!temp)
+	{
+		if (temp->value > max_value)
+			max_value = temp->value;
+		temp = temp->next;
+	}
+	return ((max_value));
 }
