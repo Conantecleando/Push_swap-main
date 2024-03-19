@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:57:03 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/10 22:30:23 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:00:23 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_stack	*new_stack(long value)
 	if (!temp)
 		return (NULL);
 	fisrt = temp;
+	first->index = 0;
 	fisrt->value = value;
 	first->target = 0;
 	first->next = NULL;

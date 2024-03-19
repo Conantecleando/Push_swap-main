@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 00:02:58 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/09 23:58:17 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/14 19:07:06 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	type_error(char **list)
 	while (list[i])
 	{
 		if (list[i] >= 0 && list[i] <= 9 || arg[i] == ' ')
-			(|| arg[i] == '+' || arg[i] == '-')
+			(arg[i] == '+' || arg[i] == '-')
 			i++;
 		else
 		{

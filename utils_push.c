@@ -6,32 +6,32 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/10 22:17:12 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:18:43 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**trans_list(int argc, char **argv[])
+void	*trans_list(int argc, char **argv, **stack a)
 {
-	int		i;
+	int			i;
+	int			z;
 	char	**list;
 
-	if (argc == 1)
-		exit(0);
-	i = 0;
-	while (i < argc -1)
+	list = (char**) malloc(sizeof (char**));
+	if (!list)
+		free (list);
+	i = 1;
+	z = 0;
+	while (i < argc)
 	{
-		if (argv[i] == 34)
-			list = ft_split(argv[], " ");
-		break ;
-		else
-			list[i] = argv[i];
+		list = split (argv[i], ' ');
 		i++;
+		type_error(list)
+		double_number_error(list);
+		insert_end_list(stack a, atol(list[i]));
 	}
-	type_error(list);
-	double_number_error(list);
-	return ((list));
+	free (list);
 }
 
 long	ft_atol(char *n)
