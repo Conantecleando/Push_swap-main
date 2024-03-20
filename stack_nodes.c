@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 21:53:22 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/14 19:45:23 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/20 00:26:48 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,19 @@ long	find_max_value(t_stack **stack)
 	return ((max_value));
 }
 
-int	stack_size(t_stack stack)
+int	stack_len(t_stack **stack)
 {
-	int	size;
+	int		i;
+	t_stack	*temp;
 
-	size = 0;
-	if (!stack)
+	if (!(*stack))
 		return (0);
-	while (stack)
+	temp = stack;
+	i = 0;
+	while (temp)
 	{
-		stack = stack->next;
-		size++;
+		i++;
+		temp = temp->next;
 	}
-	return (size);
+	return (i);
 }

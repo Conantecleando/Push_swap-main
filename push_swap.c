@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:48:35 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/09 23:59:36 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/20 01:22:19 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,33 @@ void	rotate_stack(t_stack **stack)
 		temp = temp->next;
 	temp->next = first;
 	first->next = NULL;
+}
+
+void	push(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack *origin;
+	t_stack *finish;
+	t_stack	*temp;
+
+	if (!stack_a || !stack_b)
+		return;
+	origin = *stack_a;
+	finish = *stack_b;
+	temp = stack b;
+	finish = finish->next;
+	*stack_b = finish;
+	if(!stack_a)
+	{
+		stack_a = temp;
+		stack_a->next = NULL;
+		*stack_a = origin;
+	}
+	else
+	{
+		tmp->next = stack_a
+		*stack_a = tmp;
+	}
+	stack_a->next = stack_b;
 }
 
 void	reverse_rotate_stack(t_stack **stack)

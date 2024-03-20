@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/19 11:18:43 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:38:55 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	*trans_list(int argc, char **argv, **stack a)
 		list = split (argv[i], ' ');
 		i++;
 		type_error(list)
-		double_number_error(list);
 		insert_end_list(stack a, atol(list[i]));
+		double_number_error(stack a);
 	}
 	free (list);
 }
@@ -55,21 +55,4 @@ long	ft_atol(char *n)
 		n++;
 	}
 	return (l * i);
-}
-
-int	stack_len(t_stack **stack)
-{
-	int		i;
-	t_stack	*temp;
-
-	if (!(*stack))
-		return (0);
-	temp = stack;
-	i = 0;
-	while (temp)
-	{
-		i++;
-		temp = temp->next;
-	}
-	return (i);
 }

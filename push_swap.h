@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/19 10:19:34 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/20 00:27:00 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,27 @@ typedef struct stack
 {
 	int				index;
 	int				target;
-	int				value;
+	long			value;
+	int				cost;
 	struct stack	*next;
 }	t_stack;
 
-typedef struct index
+typedef struct info_a
 {
-	long			target;
-	bool 			min;
-	bool			max;
+	t_stack			*stack
+	sizeof			len_a;
+	int				max_a;
 	struct order	*next;		
 }t_index;
+
+typedef struct info_b
+{
+	t_stack			*stack
+	sizeof			len_b;
+	int				max_b;
+	struct order	*next;		
+}t_index;
+
 
 t_stack	*new_stack(long value);
 void	swap_stack(t_stack **stack);
@@ -44,5 +54,5 @@ void	reverse_rotate_stack(t_stack **stack);
 void	plus_index_list(t_stack **stack);
 void	minus_index_list(t_stack **stack);
 void	free_stack(t_stack **stack);
-t_stack	*trans_list(int argc, char **argv);
+void	trans_list(int argc, char **argv, **stack a);
 #endif
