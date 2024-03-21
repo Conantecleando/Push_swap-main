@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/20 00:27:00 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/21 10:05:30 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ void	reverse_rotate_stack(t_stack **stack);
 void	plus_index_list(t_stack **stack);
 void	minus_index_list(t_stack **stack);
 void	free_stack(t_stack **stack);
-void	trans_list(int argc, char **argv, **stack a);
+void	trans_list(int argc, char **argv, t_stack **stack a);
+void	sort(t_stack **stack_a, t_stack **stack_b);
+
 #endif

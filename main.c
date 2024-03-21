@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:49:35 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/20 21:51:13 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/21 19:48:15 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int	main(int argc, char **argv)
 		return (1);
 	else if (argv >= 2)
 		trans_list(argc, argv);
+	sort (stack_a, stack_b)
+	if(list_ok(stack_a))
+		return (0);
 	
 	find_max_value(stack_a)
 
