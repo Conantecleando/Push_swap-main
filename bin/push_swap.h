@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/21 10:05:30 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/26 01:19:21 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # include <stdio.h>
 # include <limits.h>
 # include <stdbool.h>
+
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
+
 
 typedef struct stack
 {
