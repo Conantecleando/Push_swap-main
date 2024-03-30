@@ -77,7 +77,7 @@ void insertAtEnd(Node** head, int value) {
 int	find_max_value(Node **stack)
 {
 	Node	*temp;
-	int	max_value;
+	int		max_value;
 
 	max_value = INT_MIN;
 	temp = *stack;

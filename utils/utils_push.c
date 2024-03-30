@@ -6,30 +6,29 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/19 11:38:55 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/30 13:58:36 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	*trans_list(int argc, char **argv, **stack a)
+void	*trans_list(int argc, char **argv, t_stack **stack_a)
 {
 	int			i;
 	int			z;
-	char	**list;
+	char		**list;
 
-	list = (char**) malloc(sizeof (char**));
 	if (!list)
 		free (list);
 	i = 1;
 	z = 0;
 	while (i < argc)
 	{
-		list = split (argv[i], ' ');
+		list = ft_split(argv[i], ' ');
 		i++;
 		type_error(list)
-		insert_end_list(stack a, atol(list[i]));
-		double_number_error(stack a);
+		insert_end_list(*stack_a, atol(list[i]));
+		double_number_error(*stack_a);
 	}
 	free (list);
 }

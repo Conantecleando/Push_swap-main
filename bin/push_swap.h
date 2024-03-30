@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/27 19:37:19 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/30 13:52:38 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,25 @@ typedef struct info_b
 
 
 t_stack	*new_stack(long value);
+void	insert_end_list(t_stack **head, long value);
 void	swap_stack(t_stack **stack);
 void	clear_stack(t_stack **stack);
 void	erase_stack(void *t_stack);
 void	rotate_stack(t_stack **stack);
+void	push(t_stack **stack_a, t_stack **stack_b);
 void	reverse_rotate_stack(t_stack **stack);
+void	new_index(t_stack **stack);
 void	plus_index_list(t_stack **stack);
 void	minus_index_list(t_stack **stack);
 void	free_stack(t_stack **stack);
+long	find_max_value(t_stack **stack);
+int		stack_len(t_stack **stack);
 void	trans_list(int argc, char **argv, t_stack **stack a);
 void	sort(t_stack **stack_a, t_stack **stack_b);
+bool	list_ok(t_stack *stack);
+void	sort(t_stack **stack_a, t_stack **stack_b);
+void	target(t_stack **stack_a, t_stack **stack_b);
+
+
 
 #endif
