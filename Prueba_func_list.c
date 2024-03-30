@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdbool.h>
 
 // Definición de la estructura del nodo de la lista
 enum test
@@ -123,6 +124,20 @@ void	reverse_rotate_stack(Node **stack)
 	last->next = *stack;
 	*stack = last;
 }
+bool	list_ok(Node **stack)
+{
+	Node	*temp;
+
+	temp = *stack;
+	while (temp)
+	{
+		if ((temp->value) < (temp->(next)->value))
+			temp->next;
+		else
+			return (false);
+	}
+	return (true);
+}
 // Función para imprimir la lista en pantalla
 void printList(Node* head) 
 {
@@ -156,7 +171,8 @@ int main() {
     max = find_max_value(&myList);
 	index = find_index_max_value(&myList, max);
 	//printf("%d", myList->index == )
-
+	if (double_number_error(&myList))
+		return (0);
 	// Imprimir la lista en pantalla
     printList(myList);
     printf ("%d", max);

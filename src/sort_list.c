@@ -6,23 +6,22 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 12:11:15 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/30 14:04:51 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/30 15:50:35 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../malaga-42-main/push_swap/Push_swap-main/bin/push_swap.h"
 
-bool	list_ok(t_stack *stack)
+bool	list_ok(t_stack **stack)
 {
-	t_stack	temp;
+	t_stack	*temp;
 
-	temp = stack;
+	temp = *stack;
 	while (temp)
 	{
-		if (temp->value < temp->next->value)
-			temp->next;
-		else
+		if ((temp->value) > (temp->next->value))
 			return (false);
+		temp = temp->next;
 	}
 	return (true);
 }

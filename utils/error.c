@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 00:02:58 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/30 14:10:05 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/31 00:04:51 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	type_error(char **list)
 
 	while (list[i])
 	{
-		if (list[i] >= 0 && list[i] <= 9 || arg[i] == ' ')
-			(arg[i] == '+' || arg[i] == '-')
+		if (list[i] >= 0 && list[i] <= 9 || list[i] == ' '
+			|| list[i] == '+' || list[i] == '-')
 			i++;
 		else
 		{
@@ -53,24 +53,28 @@ void	double_number_error(char **list)
 	}
 }
 
-void	double_number_error(t_stack **stack_a)
+bool	double_number_error(t_stack **stack_a)
 {
-	t_stack		*temp;
-	t_stack		*equal;
-	int			i;
-	int			z;
+	t_stack	*temp;
+	t_stack	*equal;
 
 	temp = *stack_a;
-	equal = *stack_a;
-	i = 0;
 	while (temp)
 	{
+	equal = *stack_a;
 		while (equal)
 		{
-			if (temp->value == equal->value)
-				write(2, 'Error double type\n', 18);
-			equal->next = (equal)->next;
+			if (temp->index != equal->index)
+			{
+				if (temp->value == equal->value)
+					return (false);
+				else
+				equal = equal->next;
+			}
+			else
+				equal = equal->next;
 		}
-		temp->next = (temp)->next;
+		temp = temp->next;
 	}
+	return (true);
 }

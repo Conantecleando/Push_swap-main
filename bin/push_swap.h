@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/30 14:12:57 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/30 14:59:06 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@
 # include <stdio.h>
 # include <limits.h>
 # include <stdbool.h>
-# include "../../malaga-42-main/LIBFT/libft.h"
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 
 
-typedef struct stack
+typedef struct t_stack
 {
 	int				index;
 	int				target;
@@ -35,20 +34,19 @@ typedef struct stack
 
 typedef struct info_a
 {
-	t_stack			*stack;
-	size_t			len_a;
+	t_stack			*stack
+	sizeof			len_a;
 	int				max_a;
 	struct order	*next;		
 }t_index;
 
 typedef struct info_b
 {
-	t_stack			*stack;
-	size_t			len_b;
+	t_stack			*stack
+	sizeof			len_b;
 	int				max_b;
 	struct order	*next;		
 }t_index;
-
 
 t_stack	*new_stack(long value);
 void	insert_end_list(t_stack **head, long value);
@@ -69,6 +67,9 @@ void	sort(t_stack **stack_a, t_stack **stack_b);
 bool	list_ok(t_stack *stack);
 void	sort(t_stack **stack_a, t_stack **stack_b);
 void	target(t_stack **stack_a, t_stack **stack_b);
+void	type_error(char **list);
+void	double_number_error(char **list);
+
 
 
 
