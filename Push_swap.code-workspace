@@ -5,6 +5,15 @@
 		},
 		{
 			"path": "../../malaga-42-main"
+		},
+		{
+			"path": "../../LIBFT"
+		},
+		{
+			"path": "../../get_next_line"
+		},
+		{
+			"path": "../../ft_printf"
 		}
 	],
 	"settings": {}
