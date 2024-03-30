@@ -6,11 +6,11 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 00:02:58 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/19 12:10:13 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/30 14:10:05 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../malaga-42-main/push_swap/Push_swap-main/bin/push_swap.h"
 
 void	type_error(char **list)
 {
@@ -55,19 +55,21 @@ void	double_number_error(char **list)
 
 void	double_number_error(t_stack **stack_a)
 {
-	t_stack		***temp;
+	t_stack		*temp;
+	t_stack		*equal;
 	int			i;
 	int			z;
 
-	temp = stack_a;
+	temp = *stack_a;
+	equal = *stack_a;
 	i = 0;
 	while (temp)
 	{
-		while (stack_a)
+		while (equal)
 		{
-			if (temp->value == stack_a->value)
+			if (temp->value == equal->value)
 				write(2, 'Error double type\n', 18);
-			stack_a->next = (stack_a)->next;
+			equal->next = (equal)->next;
 		}
 		temp->next = (temp)->next;
 	}

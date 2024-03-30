@@ -6,11 +6,11 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 21:53:22 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/27 08:28:41 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/30 14:05:03 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../malaga-42-main/push_swap/Push_swap-main/bin/push_swap.h"
 
 void	free_stack(t_stack **stack)
 {

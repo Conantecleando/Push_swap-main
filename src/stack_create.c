@@ -6,11 +6,11 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:57:03 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/20 00:26:34 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/30 14:04:47 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../malaga-42-main/push_swap/Push_swap-main/bin/push_swap.h"
 
 //Creamos la lista con el primer nodo.
 t_stack	*new_stack(long value)
