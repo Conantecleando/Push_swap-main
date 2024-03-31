@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/31 00:57:16 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/31 01:03:06 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	*trans_list(int argc, char **argv)
 		list = ft_split(argv[i], ' ');
 		i++;
 	}
-	if(type_error(list))
+	if((type_error(list)) = 0)
 		exit(EXIT_FAILURE);
-	if(double_number_error(list))
+	if((double_number_error(stack_a)) = 0)
 		exit(EXIT_FAILURE);
 	free (list);
 }

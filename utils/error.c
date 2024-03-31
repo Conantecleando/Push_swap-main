@@ -6,13 +6,13 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 00:02:58 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/31 00:04:51 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/31 01:01:33 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../malaga-42-main/push_swap/Push_swap-main/bin/push_swap.h"
 
-void	type_error(char **list)
+bool	type_error(char **list)
 {
 	int	i;
 
@@ -24,11 +24,9 @@ void	type_error(char **list)
 			|| list[i] == '+' || list[i] == '-')
 			i++;
 		else
-		{
-			write(2, 'Error\n', 6);
-			exit(EXIT_FAILURE);
-		}
+			return (false);
 	}
+	return (true);
 }
 
 void	double_number_error(char **list)

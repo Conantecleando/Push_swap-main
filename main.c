@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:49:35 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/30 14:06:13 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/31 00:58:51 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 		return (1);
 	else if (argv[2] > NULL)
 		trans_list(argc, argv);
-	sort (stack_a, stack_b)
+	sort (stack_a, stack_b);
 	if(list_ok(stack_a))
 		return (0);
 	
