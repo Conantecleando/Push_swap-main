@@ -6,36 +6,47 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/31 01:03:06 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/31 01:31:50 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../malaga-42-main/push_swap/Push_swap-main/bin/push_swap.h"
 
-void	*trans_list(int argc, char **argv)
+void	*trans_list(int argc, char **argv, t_stack **stack_a)
 {
 	int			i;
-	int			z;
 	char		**list;
-	t_stack		stack_a;
 
+	list = (char **) malloc (sizeof(char **));
 	if (!list)
-		free (list);
+		free(list);
 	i = 1;
-	z = 0;
-	stack_a = new_stack(NULL);
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	while (i < argc)
+		list = ft_split(argv[i++], ' ');
+	list[i + 1] = '\0';
+	if ((type_error(list)) == 0)
+		exit(EXIT_FAILURE);
+	list_to_stack(list, *stack_a);
+	while (list[i])
+		free (list[i--]);
+}
+
+void	list_to_stack(char **list, t_stack **stack_a)
+{
+	int	z;
+
+	z = 0;
+	if (!list || !*stack_a)
+		exit(EXIT_FAILURE);
+	while (list[z] != '\0')
 	{
-		list = ft_split(argv[i], ' ');
-		i++;
+		insert_end_list(*stack_a, atol(list[z++]));
 	}
-	if((type_error(list)) = 0)
+	if ((double_number_error(stack_a)) == 0)
 		exit(EXIT_FAILURE);
-	if((double_number_error(stack_a)) = 0)
-		exit(EXIT_FAILURE);
-	free (list);
+
 }
 
 long	ft_atol(char *n)
