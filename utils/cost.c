@@ -6,12 +6,13 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:24:31 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/03 21:51:48 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/04/04 00:45:47 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../malaga-42-main/push_swap/Push_swap-main/bin/push_swap.h"
 
+//aqui hay que empezar a calcular costes teniendo en cuenta el target objetivo
 void cost_push(t_stack **stacka, t_stack **stackb)
 {
     t_stack *origin;
