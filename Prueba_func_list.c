@@ -124,11 +124,11 @@ void	reverse_rotate_stack(Node **stack)
 	last->next = *stack;
 	*stack = last;
 }
-bool	list_ok(Node **stack)
+bool	list_ok(Node *stack)
 {
 	Node	*temp;
 
-	temp = *stack;
+	temp = stack;
 	while (temp)
 	{
 		if ((temp->value) < (temp->(next)->value))
@@ -157,7 +157,7 @@ void printList(Node* head)
 // Función principal
 int main() {
     // Inicializar la lista vacía
-	Node	*myList = NULL;
+	Node	myList = NULL;
     int max = 0;
 	int index = 0;
 

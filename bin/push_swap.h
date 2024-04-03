@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/31 01:35:32 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/03/31 01:37:44 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ bool	list_ok(t_stack *stack);
 void	sort(t_stack **stack_a, t_stack **stack_b);
 void	target(t_stack **stack_a, t_stack **stack_b);
 bool	type_error(char **list);
+void	list_to_stack(char **list, t_stack **stack_a);
 bool	double_number_error(char **list);
 
 

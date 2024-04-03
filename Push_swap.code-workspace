@@ -16,5 +16,9 @@
 			"path": "../../ft_printf"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"cstdlib": "c"
+		}
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/03/31 01:31:50 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/04/03 21:45:25 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ void	*trans_list(int argc, char **argv, t_stack **stack_a)
 	int			i;
 	char		**list;
 
-	list = (char **) malloc (sizeof(char **));
-	if (!list)
-		free(list);
 	i = 1;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	while (i < argc)
+	{
 		list = ft_split(argv[i++], ' ');
+		if ((type_error(list)) == 0)
+			exit(EXIT_FAILURE);
+		list_to_stack(list, *stack_a);
+		free_ptr(list, 0);
+	}
 	list[i + 1] = '\0';
-	if ((type_error(list)) == 0)
-		exit(EXIT_FAILURE);
-	list_to_stack(list, *stack_a);
 	while (list[i])
 		free (list[i--]);
 }
