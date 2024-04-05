@@ -6,56 +6,63 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:24:31 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/04 00:45:47 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/04/05 13:23:22 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../malaga-42-main/push_swap/Push_swap-main/bin/push_swap.h"
+#include ".push_swap.h"
 
 //aqui hay que empezar a calcular costes teniendo en cuenta el target objetivo
-void cost_push(t_stack **stacka, t_stack **stackb)
-{
-    t_stack *origin;
-    t_stack *dest;
-
-    if (!*stacka || !stackb)
-        return ;
-    origin = *stacka
-    dest = *stackb;
-    while (origin)
-    {
-
-
-    }
-}
-
-void	target(t_stack **stacka, t_stack **stackb)
+void	cost_push(t_stack **stacka, t_stack **stackb)
 {
 	t_stack	*origin;
 	t_stack	*dest;
-	int		min;
+
+	if (!*stacka || !stackb)
+		return ;
+	origin = *stacka;
+	dest = *stackb;
+	while (dest)
+	{
+		if (dest->index < stack_len(dest) / 2)
+			dest->cost = ((stack_len(dest) - dest->index)) * -1;
+		else
+			dest->cost = dest->index;
+	}
+	while (origin)
+	{
+		if (origin->target < (stack_len(origin) / 2))
+			origin->cost = (stack_len - origin->target) * -1;
+		else
+			origin->cost = origin->target;
+	}
+}
+
+void	target(t_stack **stacka, t_stack **stackb, int	min)
+{
+	t_stack	*origin;
+	t_stack	*dest;
 
 	if (!*stacka || !*stackb)
 		return ;
 	origin = stacka;
 	dest = stackb;
 	min = MIN_INT;
+	origin->target = min;
 	while (origin)
 	{
-		origin->target = min;
 		if ((dest->value < origin->value) && (origin->value < min))
 		{
 			min = origin->value;
 			des->target = origin->index;
+			if (origin->value < min)
+			{
+				min = origin->value;
+				dest->target = origin->index;
+			}
+			if (min != MAX_INT)
+				return ;
 			origin = oringin->next;
-		}
-		if (min != MAX_INT)
-			return ;
-		if (origin->value < min)
-		{
-			min = origin->value;
-			dest->target = origin->index;
-			origin = origin->next;
 		}
 	}
 }

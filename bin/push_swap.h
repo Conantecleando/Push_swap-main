@@ -6,7 +6,7 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/04 00:47:06 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/04/05 13:23:58 by davidrol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
-
 typedef struct t_stack
 {
 	int				index;
