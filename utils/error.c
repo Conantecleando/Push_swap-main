@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 00:02:58 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/04 00:44:42 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/04/07 12:42:54 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ bool	double_number_error(t_stack *stack_a)
 	temp = stack_a;
 	while (temp)
 	{
-	equal = temp->next;
+		equal = temp->next;
 		while (equal)
 		{
 			if (temp->value == equal->value)
