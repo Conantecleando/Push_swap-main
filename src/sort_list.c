@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 12:11:15 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/07 12:48:54 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/07 12:54:06 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 			write (2, 'list is ok\n', 12);
 		break ;
 	}
-	else if (!list_ok(temp))
+	else if (stack_len(temp) < 4 && stack_len(temp_b) == 0 && !list_ok(temp))
 	{
 		{
 			rotate_stack(temp);
