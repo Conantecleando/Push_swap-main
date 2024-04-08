@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_push.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/04 00:44:29 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/04/08 23:54:53 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	list_to_stack(char **list, t_stack **stack_a)
 	}
 	if ((double_number_error(stack_a)) == 0)
 		exit(EXIT_FAILURE);
-
 }
 
 long	ft_atol(char *n)

@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_movement.c                                   :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 12:55:02 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/08 21:40:55 by daroldan         ###   ########.fr       */
+/*   Created: 2023/05/02 20:16:51 by daroldan          #+#    #+#             */
+/*   Updated: 2023/06/26 19:57:42 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	sa(t_stack *stack_a, bool print)
+char	*ft_strrchr(const char *chain, int c)
 {
-	swap_stack(stack_a)
-	if (print)
-		write(1, "sa", 2);
+	int	j;
+
+	j = ft_strlen(chain);
+	while (j >= 0)
+	{
+		if (chain[j] == (char)c)
+			return ((char *) chain + j);
+		j--;
+	}
+	return (NULL);
 }

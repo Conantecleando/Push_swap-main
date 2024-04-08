@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_movement.c                                   :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 12:55:02 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/08 21:40:55 by daroldan         ###   ########.fr       */
+/*   Created: 2023/05/13 21:57:14 by daroldan          #+#    #+#             */
+/*   Updated: 2023/05/13 23:20:56 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	sa(t_stack *stack_a, bool print)
+size_t	ft_strlcat(char *dest, const char *orig, size_t len)
 {
-	swap_stack(stack_a)
-	if (print)
-		write(1, "sa", 2);
+	size_t	i;
+	size_t	j;
+
+	j = ft_strlen(dest);
+	if (len <= j)
+		return (ft_strlen(orig) + len);
+	i = 0;
+	while (orig[i] != '\0' && j < len -1)
+	{
+		dest[j] = orig[i];
+		i++;
+		j++;
+	}
+	dest[j] = '\0';
+	return (ft_strlen(&orig[i]) + ft_strlen(dest));
 }

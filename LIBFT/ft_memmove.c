@@ -1,20 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_movement.c                                   :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 12:55:02 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/08 21:40:55 by daroldan         ###   ########.fr       */
+/*   Created: 2023/05/12 22:01:17 by daroldan          #+#    #+#             */
+/*   Updated: 2023/06/26 19:56:45 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	sa(t_stack *stack_a, bool print)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	swap_stack(stack_a)
-	if (print)
-		write(1, "sa", 2);
+	size_t		i;
+	char		*p;
+	const char	*r;
+
+	i = 0;
+	p = (char *) dest;
+	r = (char *) src;
+	if (!p && !r)
+		return (0);
+	if (dest > src)
+	{
+		while (len-- > 0)
+			p[len] = r[len];
+	}
+	else
+	{
+		while (i < len)
+		{
+			p[i] = r[i];
+			i++;
+		}
+	}
+	return (dest);
 }

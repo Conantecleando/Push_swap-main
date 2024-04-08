@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_movement.c                                   :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 12:55:02 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/08 21:40:55 by daroldan         ###   ########.fr       */
+/*   Created: 2023/06/20 03:18:49 by daroldan          #+#    #+#             */
+/*   Updated: 2023/06/26 19:55:55 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	sa(t_stack *stack_a, bool print)
+void	ft_lstiter(t_list *lst, void (*f)(void*))
 {
-	swap_stack(stack_a)
-	if (print)
-		write(1, "sa", 2);
+	t_list	*temp;
+
+	if (!lst && !f)
+		return ;
+	while (lst)
+	{
+		temp = (lst)->next;
+		(*f)(lst->content);
+		lst = temp;
+	}
 }

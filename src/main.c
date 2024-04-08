@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:49:35 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/05 13:24:26 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:40:19 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../malaga-42-main/push_swap/Push_swap-main/bin/push_swap.h"
+#include "push_swap.h"
 
 int	main(int argc, char **argv)
 {

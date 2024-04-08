@@ -6,11 +6,11 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 12:11:15 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/07 12:54:06 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/08 22:40:46 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../malaga-42-main/push_swap/Push_swap-main/bin/push_swap.h"
+#include "push_swap.h"
 
 bool	list_ok(t_stack **stack)
 {

@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_movement.c                                   :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 12:55:02 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/08 21:40:55 by daroldan         ###   ########.fr       */
+/*   Created: 2023/05/06 22:34:35 by daroldan          #+#    #+#             */
+/*   Updated: 2023/05/07 19:52:22 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	sa(t_stack *stack_a, bool print)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	swap_stack(stack_a)
-	if (print)
-		write(1, "sa", 2);
+	size_t	cont;
+
+	cont = -1;
+	while (++cont < n && (s1[cont] || s2[cont]))
+		if (s1[cont] != s2[cont])
+			return (((unsigned char)s1[cont]) - ((unsigned char)s2[cont]));
+	return (0);
 }

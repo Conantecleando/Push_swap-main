@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_movement.c                                   :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 12:55:02 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/08 21:40:55 by daroldan         ###   ########.fr       */
+/*   Created: 2023/05/03 00:20:52 by daroldan          #+#    #+#             */
+/*   Updated: 2024/04/07 13:14:23 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	sa(t_stack *stack_a, bool print)
+char	*ft_strnstr(const char *c, const char *s, size_t len)
 {
-	swap_stack(stack_a)
-	if (print)
-		write(1, "sa", 2);
+	size_t	pos;
+	size_t	pos2;
+
+	pos = 0;
+	if (s[pos] == '\0')
+		return ((char *) c);
+	while (c[pos] && pos < len)
+	{
+		pos2 = 0;
+		while (c[pos + pos2] == s[pos2] && pos + pos2 < len)
+		{
+			if (!s[pos2 + 1])
+				return ((char *)c + pos);
+			pos2++;
+		}
+		pos++;
+	}
+	return (0);
 }
