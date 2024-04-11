@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/08 23:47:18 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/11 19:44:53 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct info_a
 	unsigned int	len_a;
 	int				max_a;
 	struct order	*next;		
-}	t_index;
+}	t_index_a;
 
 typedef struct info_b
 {
@@ -45,7 +45,7 @@ typedef struct info_b
 	unsigned int	len_b;
 	int				max_b;
 	struct order	*next;		
-}	t_indexb;
+}	t_index_b;
 
 t_stack	*new_stack(long value);
 void	insert_end_list(t_stack **head, long value);
@@ -69,5 +69,4 @@ void	target(t_stack **stack_a, t_stack **stack_b);
 bool	type_error(char **list);
 void	list_to_stack(char **list, t_stack **stack_a);
 bool	double_number_error(char **list);
-
 #endif

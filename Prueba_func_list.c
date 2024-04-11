@@ -15,12 +15,12 @@ typedef struct Node {
     int index;          // Indice de la lista
     struct Node* prev;  //Puntero al anterior
     struct Node* next;  // Puntero al siguiente nodo
-} Node;
+} List;
 
 // Función para crear un nuevo nodo con un valor dado
-Node* createNode(int value) {
+List* createNode(int value) {
     static int i = -1;
-    Node* newNode = (Node*)malloc(sizeof(Node));
+    List* newNode = (List*)malloc(sizeof(List));
     if (newNode == NULL) {
         fprintf(stderr, "Error: No se pudo asignar memoria para el nodo.\n");
         exit(EXIT_FAILURE);
@@ -30,9 +30,9 @@ Node* createNode(int value) {
     newNode->next = NULL;
     return newNode;
 }
-void	new_index(Node **stack)
+void	new_index(List **stack)
 {
-	Node	*temp;
+	List	*temp;
 	int		i;
 
 	if (!*stack)
@@ -46,9 +46,9 @@ void	new_index(Node **stack)
 	}
 	return ;
 }
-void	minus_index_list(Node **stack)
+void	minus_index_list(List **stack)
 {
-	Node	*temp;
+	List	*temp;
 
 	temp = *stack;
 	while (temp)
@@ -60,13 +60,13 @@ void	minus_index_list(Node **stack)
 }
 
 // Función para insertar un nodo al final de la lista
-void insertAtEnd(Node** head, int value) {
-    Node* newNode = createNode(value);
+void insertAtEnd(List* head, int value) {
+    List* newNode = createNode(value);
 
-    if (*head == NULL) {
-        *head = newNode;
+    if (head == NULL) {
+        head = newNode;
     } else {
-        Node* temp = *head;
+        List* temp = head;
         while (temp->next != NULL) 
         {
             temp = temp->next;
@@ -75,13 +75,13 @@ void insertAtEnd(Node** head, int value) {
     }
 }
 
-int	find_max_value(Node **stack)
+int	find_max_value(List *stack)
 {
-	Node	*temp;
+	List	*temp;
 	int		max_value;
 
 	max_value = INT_MIN;
-	temp = *stack;
+	temp = stack;
 	while (temp)
 	{
 		if (temp->data > max_value)
@@ -91,12 +91,12 @@ int	find_max_value(Node **stack)
 	return ((max_value));
 }
 
-int	find_index_max_value(Node **a, int max)
+int	find_index_max_value(List *a, int max)
 {
-	Node	*temp;
+	List	*temp;
 	int		index;
 
-	temp = *a;
+	temp = a;
 	while (temp)
 	{
 		if (temp->data == max)
@@ -108,10 +108,10 @@ int	find_index_max_value(Node **a, int max)
 	}
 	return ((index));
 }
-void	reverse_rotate_stack(Node **stack)
+void	reverse_rotate_stack(List **stack)
 {
-	Node	*last;
-	Node	*temp;
+	List	*last;
+	List	*temp;
 
 	last = *stack;
 	temp = NULL;
@@ -124,22 +124,22 @@ void	reverse_rotate_stack(Node **stack)
 	last->next = *stack;
 	*stack = last;
 }
-bool	list_ok(Node *stack)
+bool	list_ok(List *stack)
 {
-	Node	*temp;
+	List	*temp;
 
 	temp = stack;
-	while (temp)
+	while (temp->next != NULL)
 	{
-		if ((temp->value) < (temp->(next)->value))
-			temp->next;
+		if ((temp->data) < (temp->next->data))
+			temp = temp->next;
 		else
 			return (false);
 	}
 	return (true);
 }
 // Función para imprimir la lista en pantalla
-void printList(Node* head) 
+void printList(List* head) 
 {
     printf("Lista: ");
     printf("\n");
@@ -153,25 +153,44 @@ void printList(Node* head)
     }
     printf("\n");
 }
+bool	double_number_error(List *stack_a)
+{
+	List	*temp;
+	List	*equal;
 
+	temp = stack_a;
+	while (temp)
+	{
+		equal = temp->next;
+		while (equal)
+		{
+			if (temp->data == equal->data)
+				return (false);
+			equal = equal->next;
+		}
+		temp = temp->next;
+	}
+	return (true);
+}
 // Función principal
 int main() {
     // Inicializar la lista vacía
-	Node	myList = NULL;
+	List	*myList;
     int max = 0;
 	int index = 0;
 
+	myList = NULL;
     // Insertar elementos en la lista
-    insertAtEnd(&myList, 45);
-    insertAtEnd(&myList, 20125854);
-    insertAtEnd(&myList, 3);
-    insertAtEnd(&myList, 80);
-    insertAtEnd(&myList, -89);
-    insertAtEnd(&myList, 1);
-    max = find_max_value(&myList);
-	index = find_index_max_value(&myList, max);
-	//printf("%d", myList->index == )
-	if (double_number_error(&myList))
+    insertAtEnd(myList, 45);
+    insertAtEnd(myList, 20125854);
+    insertAtEnd(myList, 3);
+    insertAtEnd(myList, 80);
+    insertAtEnd(myList, -89);
+    insertAtEnd(myList, 1);
+    max = find_max_value(myList);
+	index = find_index_max_value(myList, max);
+	printf("%d", myList->index);
+	if (double_number_error(myList))
 		return (0);
 	// Imprimir la lista en pantalla
     printList(myList);
@@ -196,7 +215,7 @@ int main() {
 
     // Liberar la memoria asignada para la lista
     while (myList != NULL) {
-        Node* temp = myList;
+        List* temp = myList;
         myList = myList->next;
         free(temp);
     }

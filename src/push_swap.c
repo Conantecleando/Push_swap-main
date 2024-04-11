@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:48:35 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/08 23:50:02 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/11 20:15:17 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	swap_stack(t_stack **stack)
 {
-	t_stack	*temp;
+	long	temp;
 
 	if (!*stack)
 		return ;
@@ -61,8 +61,8 @@ void	push(t_stack **stack_a, t_stack **stack_b)
 	}
 	else
 	{
-		tmp->next = *stack_a;
-		*stack_a = tmp;
+		temp->next = *stack_a;
+		*stack_a = temp;
 	}
 	*stack_a->next = *stack_b;
 }
