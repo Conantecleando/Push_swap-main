@@ -6,11 +6,11 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:24:31 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/05 13:23:22 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/04/15 12:06:04 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include ".push_swap.h"
+#include "../src/push_swap.h"
 
 //aqui hay que empezar a calcular costes teniendo en cuenta el target objetivo
 void	cost_push(t_stack **stacka, t_stack **stackb)
@@ -32,21 +32,21 @@ void	cost_push(t_stack **stacka, t_stack **stackb)
 	while (origin)
 	{
 		if (origin->target < (stack_len(origin) / 2))
-			origin->cost = (stack_len - origin->target) * -1;
+			origin->cost = (stack_len(origin) - origin->target) * -1;
 		else
 			origin->cost = origin->target;
 	}
 }
 
-void	target(t_stack **stacka, t_stack **stackb, int	min)
+void	target(t_stack **stacka, t_stack **stackb, int min)
 {
 	t_stack	*origin;
 	t_stack	*dest;
 
 	if (!*stacka || !*stackb)
 		return ;
-	origin = stacka;
-	dest = stackb;
+	origin = *stacka;
+	dest = *stackb;
 	min = MIN_INT;
 	origin->target = min;
 	while (origin)
@@ -54,7 +54,7 @@ void	target(t_stack **stacka, t_stack **stackb, int	min)
 		if ((dest->value < origin->value) && (origin->value < min))
 		{
 			min = origin->value;
-			des->target = origin->index;
+			dest->target = origin->index;
 			if (origin->value < min)
 			{
 				min = origin->value;
@@ -62,7 +62,7 @@ void	target(t_stack **stacka, t_stack **stackb, int	min)
 			}
 			if (min != MAX_INT)
 				return ;
-			origin = oringin->next;
+			origin = origin->next;
 		}
 	}
 }

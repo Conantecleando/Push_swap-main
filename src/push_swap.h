@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/15 11:17:14 by ribana-b         ###   ########.com      */
+/*   Updated: 2024/04/15 12:05:16 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	trans_list(int argc, char **argv, t_stack **stack_a);
 void	sort(t_stack **stack_a, t_stack **stack_b);
 bool	list_ok(t_stack *stack);
 void	sort(t_stack **stack_a, t_stack **stack_b);
-void	target(t_stack **stack_a, t_stack **stack_b);
+void	target(t_stack **stack_a, t_stack **stack_b, int min);
 bool	type_error(char **list);
 void	list_to_stack(char **list, t_stack **stack_a);
 bool	double_number_error(char **list);
