@@ -44,7 +44,7 @@ start:
 				@make all
 
 $(LIBFT):		
-				@make -C
+				@make -C ./LIBFT
 
 all:			$(NAME)
 
