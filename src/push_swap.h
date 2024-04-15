@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/11 19:44:53 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:17:14 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	plus_index_list(t_stack **stack);
 void	minus_index_list(t_stack **stack);
 void	free_stack(t_stack **stack);
 long	find_max_value(t_stack **stack);
-int		stack_len(t_stack **stack);
+int		stack_len(t_stack *stack);
 void	trans_list(int argc, char **argv, t_stack **stack_a);
 void	sort(t_stack **stack_a, t_stack **stack_b);
 bool	list_ok(t_stack *stack);
