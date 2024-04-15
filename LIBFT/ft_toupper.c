@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 23:48:54 by daroldan          #+#    #+#             */
-/*   Updated: 2023/04/28 21:37:16 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/15 12:37:20 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int	ft_toupper(int ch)
 {
-	int	t;
-
-	t = 0;
 	while (ch >= 97 && ch <= 122)
 		return (ch - 32);
 	return (ch);
