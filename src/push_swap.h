@@ -6,13 +6,14 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/15 12:12:57 by ribana-b         ###   ########.com      */
+/*   Updated: 2024/04/15 12:18:50 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "../LIBFT/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
