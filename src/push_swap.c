@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:48:35 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/11 20:15:17 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/15 10:58:31 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	swap_stack(t_stack **stack)
 
 	if (!*stack)
 		return ;
-	temp = *stack->value;
-	*stack->value = *stack->next->value;
-	*stack->next->value = temp;
+	temp = (*stack)->value;
+	(*stack)->value = (*stack)->next->value;
+	(*stack)->next->value = temp;
 	return ;
 }
 
@@ -29,11 +29,11 @@ void	rotate_stack(t_stack **stack)
 	t_stack	*first;
 	t_stack	*temp;
 
-	if (!*stack || !*stack->next)
+	if (!*stack || !(*stack)->next)
 		return ;
 	first = *stack;
 	*stack = (*stack)->next;
-	*stack = temp;
+	temp = *stack;
 	while (temp->next)
 		temp = temp->next;
 	temp->next = first;
@@ -50,13 +50,13 @@ void	push(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	origin = *stack_a;
 	finish = *stack_b;
-	temp = *stack b;
+	temp = *stack_b;
 	finish = finish->next;
 	*stack_b = finish;
 	if (!stack_a)
 	{
 		*stack_a = temp;
-		*stack_a->next = NULL;
+		(*stack_a)->next = NULL;
 		*stack_a = origin;
 	}
 	else
@@ -64,7 +64,7 @@ void	push(t_stack **stack_a, t_stack **stack_b)
 		temp->next = *stack_a;
 		*stack_a = temp;
 	}
-	*stack_a->next = *stack_b;
+	(*stack_a)->next = *stack_b;
 }
 
 void	reverse_rotate_stack(t_stack **stack)
@@ -72,7 +72,7 @@ void	reverse_rotate_stack(t_stack **stack)
 	t_stack	*last;
 	t_stack	*temp;
 
-	if (!*stack || !*stack->next)
+	if (!*stack || !(*stack)->next)
 		return ;
 	last = *stack;
 	temp = NULL;

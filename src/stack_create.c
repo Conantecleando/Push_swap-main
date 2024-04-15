@@ -6,30 +6,26 @@
 /*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:57:03 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/30 14:04:47 by davidrol         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:38:01 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../malaga-42-main/push_swap/Push_swap-main/bin/push_swap.h"
+#include "push_swap.h"
 
 //Creamos la lista con el primer nodo.
 t_stack	*new_stack(long value)
 {
-	t_stack		*temp;
-	t_stack		fisrt;
-	int			i;
+	t_stack		*first;
 
-	i = -1;
-	temp = (t_stack *)mallloc(sizeof(t_stack));
-	if (!temp)
+	first = (t_stack *)malloc(sizeof(t_stack));
+	if (!first)
 		return (NULL);
-	fisrt = temp;
 	first->index = 0;
-	fisrt->value = value;
+	first->value = value;
 	first->target = 0;
 	first->cost = 0;
 	first->next = NULL;
-	return (temp);
+	return (first);
 }
 
 //Esta funcion inserta nodos con los dos valores dados al final de la lista
