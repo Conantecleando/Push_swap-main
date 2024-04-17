@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 12:11:15 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/15 11:27:58 by ribana-b         ###   ########.com      */
+/*   Updated: 2024/04/17 20:40:28 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ bool	list_ok(t_stack *stack)
 	t_stack	*temp;
 
 	temp = stack;
-	while (temp)
+	while (temp && temp->next)
 	{
 		if ((temp->value) > (temp->next->value))
 			return (false);
@@ -34,18 +34,18 @@ void	sort_longer(t_stack **stack_a, t_stack **stack_b)
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
-	if (stack_len(*stack_a) < 4 && stack_len(*stack_b) == 0)
+	if (stack_len(*stack_a) < 4 && stack_len(*stack_b) == 0
+		&& list_ok(*stack_a))
 	{
-		if (list_ok(*stack_a))
-		{
-			write(2, "list is ok\n", 12);
-			return ;
-		}
+		write(2, "list is ok\n", 12);
+		return ;
 	}
-	else if (stack_len(*stack_a) < 4 && stack_len(*stack_b) == 0 && !list_ok(*stack_a))
+	else if (stack_len(*stack_a) < 4 && stack_len(*stack_b) == 0
+		&& !list_ok(*stack_a))
 	{
 		{
 			rotate_stack(stack_a);
+			write(2, "ra\n", 3);
 			if (list_ok(*stack_a))
 			{
 				write(2, "list is ok\n", 12);
@@ -54,11 +54,13 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 			else
 			{
 				rotate_stack(stack_a);
+				write(2, "ra\n", 3);
 				write(2, "list is ok\n", 12);
 			}
 		}
 	}
-	else if ((stack_len(*stack_a) > 3 && stack_len(*stack_b)== 0) || !stack_len(*stack_b))
+	else if ((stack_len(*stack_a) > 3 && stack_len(*stack_b) == 0)
+		|| !stack_len(*stack_b))
 	{
 		sort_longer(stack_a, stack_b);
 	}

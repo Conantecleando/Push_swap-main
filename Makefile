@@ -6,7 +6,7 @@
 #    By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 13:26:33 by davidrol          #+#    #+#              #
-#    Updated: 2024/04/15 13:48:01 by ribana-b         ###   ########.com       #
+#    Updated: 2024/04/17 20:56:25 by daroldan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ UTILS_DIR		= utils/
 OBJ_DIR		= obj/
 
 #Compiler and CFlags
-CC			= gcc
+CC			= gcc 
 CFLAGS		= -Wall -Werror -Wextra
 RM			=	rm -f
 #Sources Files

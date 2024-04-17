@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/15 12:26:36 by ribana-b         ###   ########.com      */
+/*   Updated: 2024/04/17 20:15:40 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	trans_list(int argc, char **argv, t_stack **stack_a)
 		list_to_stack(list, stack_a);
 		free_ptr(list, 0);
 	}
-	list[i + 1] = '\0';
 	while (list[i])
 		free (list[i--]);
 }
@@ -69,12 +68,12 @@ void	list_to_stack(char **list, t_stack **stack_a)
 	int	z;
 
 	z = 0;
-	if (!list || !*stack_a)
+	if (!list)
 		exit(EXIT_FAILURE);
-	while (list[z]) 
+	while (list[z])
 	{
 		insert_end_list(stack_a, ft_atol(list[z++]));
 	}
-//	if ((double_number_error(stack_a)) == 0)
-//		exit(EXIT_FAILURE);
+	if ((double_number_error(*stack_a)) == 0)
+		exit(EXIT_FAILURE);
 }

@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 00:18:20 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/15 12:40:58 by ribana-b         ###   ########.com      */
+/*   Updated: 2024/04/17 19:00:08 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static char	**ft_subsplit(char **ptr, char const *s, char c, int t)
 		while (s[cont] && s[cont] != c && s[cont] != 0)
 			cont++;
 		ptr[t] = ft_substr(s, cont2, cont);
-		if (ptr[t])
+		if (!ptr[t])
 		{
 			free_ptr(ptr, t);
 			return (NULL);
