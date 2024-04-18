@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/17 19:51:40 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/18 01:08:24 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,11 @@ void	insert_end_list(t_stack **head, long value);
 void	swap_stack(t_stack **stack);
 void	clear_stack(t_stack **stack);
 void	erase_stack(t_stack **t_stack);
-void	rotate_stack(t_stack **stack);
-void	push(t_stack **stack_a, t_stack **stack_b);
-void	reverse_rotate_stack(t_stack **stack);
+void	rotate_stack(t_stack **stack, char c);
+void	rr(t_stack **stack_a, t_stack **stack_b);
+void	push(t_stack **stack_a, t_stack **stack_b, char c);
+void	reverse_rotate_stack(t_stack **stack, char c);
+void	rrr(t_stack **stack_a, t_stack **stack_b);
 void	new_index(t_stack **stack);
 void	plus_index_list(t_stack **stack);
 void	minus_index_list(t_stack **stack);
@@ -64,6 +66,7 @@ long	find_max_value(t_stack **stack);
 int		stack_len(t_stack *stack);
 void	trans_list(int argc, char **argv, t_stack **stack_a);
 void	sort(t_stack **stack_a, t_stack **stack_b);
+void	sot_three(t_stack **stack_a);
 bool	list_ok(t_stack *stack);
 void	sort(t_stack **stack_a, t_stack **stack_b);
 void	target(t_stack **stack_a, t_stack **stack_b, int min);

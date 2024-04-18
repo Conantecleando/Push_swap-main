@@ -1,23 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mainsplit.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 18:51:43 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/17 18:55:52 by daroldan         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
+#include <stdio.h>
 
-int main (void)
+int main(void)
 {
-	char **plited = ft_split("55", ' ');
+	char *c = "12 45 8 ghg 45";
+	char **s = ft_split(c, ' ');
 
-	if (!plited)
-		return (1);
-	
-	return (0);
+	printf("%s", s[1]);
 }

@@ -6,7 +6,7 @@
 #    By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 13:26:33 by davidrol          #+#    #+#              #
-#    Updated: 2024/04/17 20:56:25 by daroldan         ###   ########.fr        #
+#    Updated: 2024/04/18 01:20:48 by daroldan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ UTILS_DIR		= utils/
 OBJ_DIR		= obj/
 
 #Compiler and CFlags
-CC			= gcc 
-CFLAGS		= -Wall -Werror -Wextra
+CC			= gcc -g
+CFLAGS		= -Wall -Werror -Wextra -I ./src
 RM			=	rm -f
 #Sources Files
 SRC			=	$(SRC_DIR)push_swap.c\

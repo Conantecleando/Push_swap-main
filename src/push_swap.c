@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:48:35 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/17 20:20:07 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/18 01:00:32 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	swap_stack(t_stack **stack)
 	temp = (*stack)->value;
 	(*stack)->value = (*stack)->next->value;
 	(*stack)->next->value = temp;
-	return ;
+	write (1, "sa\n", 3);
 }
 
-void	rotate_stack(t_stack **stack)
+void	rotate_stack(t_stack **stack, char c)
 {
 	t_stack	*first;
 	t_stack	*temp;
@@ -38,36 +38,36 @@ void	rotate_stack(t_stack **stack)
 		temp = temp->next;
 	temp->next = first;
 	first->next = NULL;
+	if (c == 'a')
+		write(1, "ra\n", 3);
+	else if(c == 'b')
+		write(1, "rb\n", 3);
 }
 
-void	push(t_stack **stack_a, t_stack **stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*origin;
-	t_stack	*finish;
+	rotate_stack(stack_a, 'r');
+	rotate_stack(stack_b, 'r');
+	write(1, "rr\n", 3);
+}
+
+void	push(t_stack **stack_a, t_stack **stack_b, char c)
+{
 	t_stack	*temp;
 
 	if (!*stack_a || !*stack_b)
 		return ;
-	origin = *stack_a;
-	finish = *stack_b;
-	temp = *stack_b;
-	finish = finish->next;
-	*stack_b = finish;
-	if (!stack_a)
-	{
-		*stack_a = temp;
-		(*stack_a)->next = NULL;
-		*stack_a = origin;
-	}
-	else
-	{
-		temp->next = *stack_a;
-		*stack_a = temp;
-	}
+	temp = (*stack_a)->next;
 	(*stack_a)->next = *stack_b;
+	*stack_b = *stack_a;
+	*stack_a = temp;
+	if (c == 'a')
+		write(1, "pa\n", 3);
+	else if(c == 'b')
+		write(1, "pb\n", 3);
 }
 
-void	reverse_rotate_stack(t_stack **stack)
+void	reverse_rotate_stack(t_stack **stack, char c)
 {
 	t_stack	*last;
 	t_stack	*temp;
@@ -84,6 +84,17 @@ void	reverse_rotate_stack(t_stack **stack)
 	temp->next = NULL;
 	last->next = *stack;
 	*stack = last;
+	if (c == 'a')
+		write(1, "rra\n", 4);
+	else if (c == 'b')
+		write(1, "rrb\n", 4);
+}
+
+void	rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	reverse_rotate_stack(stack_a, 'R');
+	reverse_rotate_stack(stack_b, 'R');
+	write(1, "rrr\n", 3);
 }
 /*void	main(void)
 {

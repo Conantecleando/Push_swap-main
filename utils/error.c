@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 00:02:58 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/15 12:11:58 by ribana-b         ###   ########.com      */
+/*   Updated: 2024/04/18 02:27:59 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ bool	double_number_error(t_stack *stack_a)
 	t_stack	*equal;
 
 	temp = stack_a;
-	while (temp)
+	while (temp->next != NULL)
 	{
 		equal = temp->next;
 		while (equal)

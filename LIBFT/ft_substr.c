@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 20:53:22 by daroldan          #+#    #+#             */
-/*   Updated: 2023/06/08 21:20:58 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/18 02:01:26 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	if (len > 0)
 	{
-		ft_strlcpy(z, (p + start), len + 1);
+		ft_strlcpy(z, (p + start), len);
 		return (z);
 	}
 	return (0);

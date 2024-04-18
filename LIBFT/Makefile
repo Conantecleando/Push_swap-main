@@ -6,13 +6,13 @@
 #    By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/21 20:45:59 by daroldan          #+#    #+#              #
-#    Updated: 2024/04/16 00:39:48 by daroldan         ###   ########.fr        #
+#    Updated: 2024/04/18 01:40:42 by daroldan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= libft.a
 
-CC = gcc 
+CC = gcc -g 
 
 CFLAGS = -Wall -Werror -Wextra
 

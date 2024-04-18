@@ -6,11 +6,11 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/17 20:15:40 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/18 02:28:48 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../src/push_swap.h"
+#include "push_swap.h"
 
 // Copiado del ft_split.c para que se pueda utilizar
 // Otra solución es añadir la función en el libft.h
@@ -28,6 +28,7 @@ long	ft_atol(char *n)
 	long	l;
 
 	l = 0;
+	i = 1;
 	while (*n == ' ' || *n == '\t' || *n == '\n' || \
 			*n == '\r' || *n == '\f' || *n == '\v')
 		n++;
@@ -59,8 +60,6 @@ void	trans_list(int argc, char **argv, t_stack **stack_a)
 		list_to_stack(list, stack_a);
 		free_ptr(list, 0);
 	}
-	while (list[i])
-		free (list[i--]);
 }
 
 void	list_to_stack(char **list, t_stack **stack_a)
