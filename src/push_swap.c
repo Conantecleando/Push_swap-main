@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 22:48:35 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/18 01:00:32 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:55:37 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	rotate_stack(t_stack **stack, char c)
 	first->next = NULL;
 	if (c == 'a')
 		write(1, "ra\n", 3);
-	else if(c == 'b')
+	else if (c == 'b')
 		write(1, "rb\n", 3);
 }
 
@@ -55,15 +55,13 @@ void	push(t_stack **stack_a, t_stack **stack_b, char c)
 {
 	t_stack	*temp;
 
-	if (!*stack_a || !*stack_b)
-		return ;
 	temp = (*stack_a)->next;
 	(*stack_a)->next = *stack_b;
 	*stack_b = *stack_a;
 	*stack_a = temp;
 	if (c == 'a')
 		write(1, "pa\n", 3);
-	else if(c == 'b')
+	else if (c == 'b')
 		write(1, "pb\n", 3);
 }
 

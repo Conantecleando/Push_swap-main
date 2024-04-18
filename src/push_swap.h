@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/18 01:08:24 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/18 22:05:03 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,23 @@ void	rr(t_stack **stack_a, t_stack **stack_b);
 void	push(t_stack **stack_a, t_stack **stack_b, char c);
 void	reverse_rotate_stack(t_stack **stack, char c);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
-void	new_index(t_stack **stack);
+void	new_index(t_stack *stack);
 void	plus_index_list(t_stack **stack);
 void	minus_index_list(t_stack **stack);
 void	free_stack(t_stack **stack);
 long	find_max_value(t_stack **stack);
+int 	find_min_value(t_stack **stack);
+int		find_average_value(t_stack *stack);
 int		stack_len(t_stack *stack);
 void	trans_list(int argc, char **argv, t_stack **stack_a);
 void	sort(t_stack **stack_a, t_stack **stack_b);
-void	sot_three(t_stack **stack_a);
+void	sort_three(t_stack **stack_a);
 bool	list_ok(t_stack *stack);
 void	sort(t_stack **stack_a, t_stack **stack_b);
-void	target(t_stack **stack_a, t_stack **stack_b, int min);
+void	cost_push(t_stack *stacka, t_stack *stackb);
+void	target(t_stack *stack_a, t_stack *stack_b, int min);
 bool	type_error(char **list);
 void	list_to_stack(char **list, t_stack **stack_a);
 bool	double_number_error(t_stack *stack_a);
+void	printList(t_stack *head);
 #endif

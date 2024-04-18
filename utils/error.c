@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 00:02:58 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/18 02:27:59 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/18 20:51:15 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ bool	double_number_error(t_stack *stack_a)
 		equal = temp->next;
 		while (equal)
 		{
-			if (temp->value == equal->value)
+			if (temp->value == equal->value
+				|| temp->value < MIN_INT || temp->value > MAX_INT)
 				return (false);
 			equal = equal->next;
 		}

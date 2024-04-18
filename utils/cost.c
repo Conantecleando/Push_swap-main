@@ -3,31 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   cost.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:24:31 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/15 12:06:04 by ribana-b         ###   ########.com      */
+/*   Updated: 2024/04/19 01:09:14 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
 //aqui hay que empezar a calcular costes teniendo en cuenta el target objetivo
-void	cost_push(t_stack **stacka, t_stack **stackb)
+void	cost_push(t_stack *stacka, t_stack *stackb)
 {
 	t_stack	*origin;
 	t_stack	*dest;
 
-	if (!*stacka || !stackb)
-		return ;
-	origin = *stacka;
-	dest = *stackb;
+	origin = stacka;
+	dest = stackb;
 	while (dest)
 	{
 		if (dest->index < stack_len(dest) / 2)
 			dest->cost = ((stack_len(dest) - dest->index)) * -1;
 		else
 			dest->cost = dest->index;
+		dest = dest->next;
 	}
 	while (origin)
 	{
@@ -35,34 +34,37 @@ void	cost_push(t_stack **stacka, t_stack **stackb)
 			origin->cost = (stack_len(origin) - origin->target) * -1;
 		else
 			origin->cost = origin->target;
+		origin = origin->next;
 	}
 }
 
-void	target(t_stack **stacka, t_stack **stackb, int min)
+void	target(t_stack *stacka, t_stack *stackb, int min)
 {
 	t_stack	*origin;
 	t_stack	*dest;
 
-	if (!*stacka || !*stackb)
-		return ;
-	origin = *stacka;
-	dest = *stackb;
-	min = MIN_INT;
+	origin = stacka;
+	dest = stackb;
+	min = MAX_INT;
 	origin->target = min;
 	while (origin)
 	{
-		if ((dest->value < origin->value) && (origin->value < min))
+		while ((dest->value < origin->value) && (origin->value < min))
 		{
-			min = origin->value;
-			dest->target = origin->index;
-			if (origin->value < min)
-			{
-				min = origin->value;
-				dest->target = origin->index;
-			}
-			if (min != MAX_INT)
-				return ;
-			origin = origin->next;
+			min = dest->value;
+			origin->target = dest->index;
+			dest = dest->next;
 		}
+		if (origin->value == min)
+			origin->target = stack_len(stack_a);
+		if (min != MAX_INT)
+			return ;
+		if (dest->value < min)
+		{
+			min = dest->value;
+			origin->target = dest->index;
+			dest = dest->next;
+		}
+		origin = origin->next;			
 	}
 }
