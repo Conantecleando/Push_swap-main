@@ -6,7 +6,7 @@
 #    By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 13:26:33 by davidrol          #+#    #+#              #
-#    Updated: 2024/04/18 01:20:48 by daroldan         ###   ########.fr        #
+#    Updated: 2024/04/21 06:10:32 by daroldan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,8 @@ UTILS		=	$(UTILS_DIR)change_index_list.c\
 				$(UTILS_DIR)cost.c\
 				$(UTILS_DIR)error.c\
 				$(UTILS_DIR)utils_push.c\
+				$(UTILS_DIR)aux.c\
+				$(UTILS_DIR)moves_stacks.c\
 
 #Apply the pattern substitition to each source file in SRC and produce a corresponding list of object file in the OBJ_DIR
 OBJ			=	$(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRC)) \

@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 21:53:22 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/18 21:33:36 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/20 19:06:12 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-long	find_max_value(t_stack **stack)
+long	find_max_value(t_stack *stack)
 {
 	t_stack	*temp;
 	long	max_value;
 
 	max_value = LONG_MIN;
-	temp = *stack;
+	temp = stack;
 	while (temp)
 	{
 		if (temp->value > max_value)

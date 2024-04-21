@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 00:29:44 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/18 22:04:59 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/20 19:37:15 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 void	new_index(t_stack *stack)
 {
-	t_stack	*temp;
 	int		i;
 
-	temp = stack;
 	i = -1;
-	while (temp)
+	while (stack)
 	{
-		temp->index = ++i;
-		temp = temp->next;
+		stack->index = ++i;
+		stack = stack->next;
 	}
 	return ;
 }

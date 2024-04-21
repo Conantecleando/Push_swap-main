@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 12:11:15 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/18 22:31:10 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/21 07:01:39 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ bool	list_ok(t_stack *stack)
 
 void	sort_three(t_stack **stack_a)
 {
-	if(list_ok(*stack_a))
+	if (list_ok(*stack_a))
 		return ;
 	if ((*stack_a)->value > (*stack_a)->next->value
 		&& (*stack_a)->value > (*stack_a)->next->next->value)
@@ -52,40 +52,20 @@ void	sort_longer(t_stack **stack_a, t_stack **stack_b)
 			rotate_stack(stack_a, 'a');
 		push(stack_a, stack_b, 'b');
 		len--;
-		printf("A\n");
 	}
+	printf("antes de ser ordenadas\n");
+	printList(*stack_a);
+	printList(*stack_b);
+	printf("HASTA AQUI\n");
 	sort_three(stack_a);
-	while (*stack_b)
+	while (stack_b)
 	{
 		new_index(*stack_b);
-		printList(*stack_b);
 		new_index(*stack_a);
-		target(*stack_b, *stack_a, 0);
-		cost_push(*stack_b, *stack_a);
-		if ((*stack_a)->cost < 0 && (*stack_b)->cost < 0)
-			rrr(stack_a, stack_b);
-		else if ((*stack_a)->cost > 0 && (*stack_b)->cost > 0)
-			rr(stack_a, stack_b);
-		else if ((*stack_a)->cost == 0 && (*stack_b)->cost == 0)
-			push(stack_b, stack_a, 'a');
-		else if ((*stack_a)->cost < 0)
-			reverse_rotate_stack(stack_a, 'a');
-		else if ((*stack_a)->cost > 0)
-			rotate_stack(stack_a, 'a');
-		else if ((*stack_b)->cost < 0)
-			reverse_rotate_stack(stack_b, 'b');
-		else if ((*stack_b)->cost > 0)
-			rotate_stack(stack_b, 'b');
+		target(*stack_b, *stack_a);
+		cost_push(*stack_a, *stack_b);
+		moves(*stack_a, *stack_b);
 	}
-	while (list_ok(*stack_a))
-	{
-		printf("a\n");
-		new_index(*stack_a);
-		if (find_min_value(stack_a) < stack_len(*stack_a))
-			rotate_stack(stack_a, 'a');
-		else
-			reverse_rotate_stack(stack_a, 'a');
-	}	
 }
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
