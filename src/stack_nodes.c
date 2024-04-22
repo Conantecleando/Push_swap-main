@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 21:53:22 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/20 19:06:12 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:51:46 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,26 @@ long	find_max_value(t_stack *stack)
 	return ((max_value));
 }
 
-int	find_min_value(t_stack **stack)
+t_stack	*find_min_value(t_stack *stack)
 {
 	t_stack	*temp;
-	long	min_value;
-	int		index;
+	int		min_value;
 
-	min_value = LONG_MAX;
-	temp = *stack;
+	min_value = MAX_INT;
+	temp = stack;
 	while (temp)
 	{
 		if (temp->value < min_value)
-		{
 			min_value = temp->value;
-			index = temp->index;
-		}
 		temp = temp->next;
 	}
-	return (index);
+	while (stack)
+	{
+		if (stack->value == min_value)
+			break ;
+		stack = stack->next;
+	}
+	return (stack);
 }
 
 int	find_average_value(t_stack *stack)

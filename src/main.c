@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:49:35 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/21 06:48:23 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:57:08 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int	main(int argc, char **argv)
 	sort(&stack_a, &stack_b);
 	if (list_ok(stack_a))
 		return (0);
-	find_max_value(stack_a);
+
 }

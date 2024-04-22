@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 12:11:15 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/21 07:01:39 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/22 02:09:19 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	sort_longer(t_stack **stack_a, t_stack **stack_b)
 	int		len;
 
 	len = stack_len(*stack_a);
+	get_index(*stack_a, len + 1);
 	while (len >= 4)
 	{
 		max = find_average_value(*stack_a);
@@ -53,18 +54,28 @@ void	sort_longer(t_stack **stack_a, t_stack **stack_b)
 		push(stack_a, stack_b, 'b');
 		len--;
 	}
-	printf("antes de ser ordenadas\n");
-	printList(*stack_a);
-	printList(*stack_b);
-	printf("HASTA AQUI\n");
+	//printf("antes de ser ordenadas\n");
+	//printList(*stack_a);
+	//printList(*stack_b);
+	//printf("HASTA AQUI\n");
 	sort_three(stack_a);
+	get_position(*stack_a);
+	get_position(*stack_b);
 	while (stack_b)
 	{
-		new_index(*stack_b);
-		new_index(*stack_a);
-		target(*stack_b, *stack_a);
-		cost_push(*stack_a, *stack_b);
-		moves(*stack_a, *stack_b);
+		cost_push(stack_a, stack_b);
+		target(stack_a, stack_b);
+	//	printf("antes de ser ordenadas\n");
+		printList(*stack_a);
+		printList(*stack_b);
+		push(stack_b, stack_a, 'a');
+				/*
+		while (absolute((*stack_b)->cost) + absolute((*stack_b)->costarget)
+			!= search_move(*stack_b))
+			(*stack_b) = (*stack_b)->next;
+		//moves(*stack_a, *stack_b);
+		better_moves(*stack_a, *stack_b);*/
+		len--;
 	}
 }
 

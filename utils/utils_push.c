@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/21 00:43:45 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/21 22:00:20 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ void printList(t_stack *head)
        	printf("%ld\n", head->value);
 		printf(" index  ");
         printf("%d", head->index);
-        printf(" target ");
-		printf("%d", head->target);
-		printf(" cost  ");
+        printf(" cost  ");
 		printf("%d", head->cost);
 		printf("\n");
 		printf(" costarget  ");

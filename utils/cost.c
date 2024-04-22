@@ -6,57 +6,82 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:24:31 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/21 00:56:18 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/22 01:57:51 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
 //aqui hay que empezar a calcular costes teniendo en cuenta el target objetivo
-void	cost_push(t_stack *stacka, t_stack *stackb)
+void	cost_push(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*final;
-	t_stack	*start;
+	int		len_b;
+	int		len_a;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
 
-	final = stacka;
-	start = stackb;
-	while (start)
+	temp_a = *stack_a;
+	temp_b = *stack_b;
+	len_a = stack_len(*stack_a);
+	len_b = stack_len(*stack_b);
+	while (temp_b)
 	{
-		start->cost = start->index;
-		if (start->index < stack_len(start) / 2)
-			start->cost = ((stack_len(start) - (start->index)) * -1);
-		start->costarget = start->target;
-		if (start->target < (stack_len(final) / 2))
-			start->costarget = (stack_len(final) - start->target) * -1;
-		start = start->next;
+		temp_b->cost = temp_b->pos;
+		if (temp_b->pos > len_b / 2)
+			temp_b->cost = (len_b - temp_b->pos) * -1;
+		temp_b->costarget = temp_b->target;
+		if (temp_b->target > len_a / 2)
+			temp_b->costarget = (len_a - temp_b->target) * -1;
+		temp_b = temp_b->next;
 	}
 }
 
-void	target(t_stack *stacka, t_stack *stackb)
+int	get_target(t_stack **stack_a, int index_b, int target_i, int target)
 {
-	t_stack	*final;
-	t_stack	*start;
+	t_stack	*tmp;
 
-	final = stackb;
-	start = stacka;
-	while (final)
+	tmp = *stack_a;
+	while (tmp)
 	{
-		start = stackb;
-		while (start)
+		if (tmp->index < index_b && tmp->index < target_i)
 		{
-			if ((final->value < start->value))
-				final->target = start->index;
-			else if ((final->value > start->value)
-				&& (final->value < (find_max_value(start)))
-				&& (final->value < start->next->value))
-				final->target = start->next->index;
-			else if (final->value > (find_max_value(start)))
-				final->target = (stack_len(start));
-			start = start->next;
+			target = tmp->pos;
+			target_i = tmp->index;
 		}
-		final = final->next;
+		tmp = tmp->next;
+	}
+	if (target_i == MAX_INT)
+		return (target) ;
+	tmp = *stack_a;
+	while (tmp)
+	{
+		if (tmp->index < target_i)
+		{
+			target = tmp->pos;
+			target_i = tmp->index;
+		}
+		tmp = tmp->next;
+	}
+	return (target);
+}
+
+void	target(t_stack **stacka, t_stack **stackb)
+{
+	t_stack	*temp;
+	int 	target;
+
+	temp = *stackb;
+	get_position(*stacka);
+	get_position(*stackb);
+	target = 0;
+	while (temp)
+	{
+		target = get_target(stacka, temp->index, MAX_INT, target);
+		temp->target = target;
+		temp = temp->next;
 	}
 }
+
 	//min = MAX_INT;
 	//max_a = find_max_value(start);
 	//final->target = min;
