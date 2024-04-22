@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:24:31 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/22 20:22:59 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:52:06 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ void	cost_push(t_stack **stack_a, t_stack **stack_b)
 {
 	int		len_b;
 	int		len_a;
-	t_stack	*temp_a;
 	t_stack	*temp_b;
 
-	temp_a = *stack_a;
 	temp_b = *stack_b;
 	len_a = stack_len(*stack_a);
 	len_b = stack_len(*stack_b);
@@ -36,7 +34,7 @@ void	cost_push(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-static void	get_target(t_stack **stack_a, size_t *target, int value, int limit)
+static void	get_target(t_stack **stack_a, int *target, int value, int limit)
 {
 	t_stack	*tmp;
 
@@ -46,7 +44,7 @@ static void	get_target(t_stack **stack_a, size_t *target, int value, int limit)
 		if (value < tmp->value && tmp->value < limit)
 		{
 			*target = tmp->index;
-			limit = tmp->value;
+			limit = (int)tmp->value;
 		}
 		tmp = tmp->next;
 	}
@@ -57,7 +55,7 @@ static void	get_target(t_stack **stack_a, size_t *target, int value, int limit)
 	{
 		if (tmp->value < limit)
 		{
-			limit = tmp->value;
+			limit = (int)tmp->value;
 			*target = tmp->index;
 		}
 		tmp = tmp->next;
@@ -67,8 +65,10 @@ static void	get_target(t_stack **stack_a, size_t *target, int value, int limit)
 void	target(t_stack **stacka, t_stack **stackb)
 {
 	t_stack	*temp_b;
-	size_t	target;
+	t_stack *temp_a;
+	int 	target;
 
+	temp_a = *stacka;
 	temp_b = *stackb;
 	target = 0;
 	while (temp_b)
@@ -76,7 +76,7 @@ void	target(t_stack **stacka, t_stack **stackb)
 		if (temp_b->value == MAX_INT)
 			target = stack_len(*stacka);
 		else
-			get_target(stacka, &target, temp_b->value, MAX_INT);
+			get_target(&temp_a, &target, (int)temp_b->value, MAX_INT);
 		temp_b->target = target;
 		temp_b = temp_b->next;
 	}

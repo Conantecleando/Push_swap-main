@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 12:11:15 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/22 21:34:15 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:40:56 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ void	sort_longer(t_stack **stack_a, t_stack **stack_b)
 		push(stack_a, stack_b, 'b');
 		len--;
 	}
+	printList(*stack_a);
+	printList(*stack_b);
 	sort_three(stack_a);
 	//printf("aqui empieza");
-	//printList(*stack_a);
-	//printList(*stack_b);
 	//printf("aqui termina");
 	while (stack_b)
 	{
@@ -65,7 +65,7 @@ void	sort_longer(t_stack **stack_a, t_stack **stack_b)
 		printList(*stack_a);
 		target(stack_a, stack_b);
 		cost_push(stack_a, stack_b);
-		better_moves(stack_a, stack_b);
+		better_moves(*stack_a, *stack_b);
 		printList(*stack_a);
 		printList(*stack_b);
 	}

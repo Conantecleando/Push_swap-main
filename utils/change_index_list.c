@@ -22,7 +22,6 @@ void	new_index(t_stack *stack)
 		stack->index = ++i;
 		stack = stack->next;
 	}
-	return ;
 }
 
 void	plus_index_list(t_stack **stack)
@@ -37,7 +36,6 @@ void	plus_index_list(t_stack **stack)
 		temp->index++;
 		temp = temp->next;
 	}
-	return ;
 }
 
 void	minus_index_list(t_stack **stack)
@@ -52,5 +50,4 @@ void	minus_index_list(t_stack **stack)
 		temp->index--;
 		temp = temp->next;
 	}
-	return ;
 }
