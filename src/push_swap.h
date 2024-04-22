@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 22:28:27 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/22 01:57:34 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/22 02:52:33 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void		sort(t_stack **stack_a, t_stack **stack_b);
 void		sort_three(t_stack **stack_a);
 bool		list_ok(t_stack *stack);
 void		sort(t_stack **stack_a, t_stack **stack_b);
-void		better_moves(t_stack *stack_a, t_stack *stack_b);
 void		moves_stacks(t_stack *stack_a, t_stack *stack_b);
 void		cost_push(t_stack **stacka, t_stack **stackb);
 int			get_target(t_stack **stacka, int index_b, int target_i, int target);
 void		moves(t_stack *stack_a, t_stack *stack_b);
+void		better_moves (t_stack **stack, t_stack **stack_b);
 void		target(t_stack **stacka, t_stack **stackb);
 bool		type_error(char **list);
 void		list_to_stack(char **list, t_stack **stack_a);

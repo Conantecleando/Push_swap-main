@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 02:17:23 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/22 02:01:12 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/22 02:59:20 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 	}
 }*/
 
-void	better_moves(t_stack *stack_a, t_stack *stack_b)
+void	moves(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_b->costarget < 0 && stack_b->cost < 0)
 		rrr(&stack_a, &stack_b);
@@ -45,7 +45,7 @@ void	better_moves(t_stack *stack_a, t_stack *stack_b)
 	else if (stack_b->cost > 0)
 		rotate_stack(&stack_b, 'b');
 }
-
+/*
 int	search_move(t_stack *stack_b)
 {
 	int		flag;
@@ -62,7 +62,30 @@ int	search_move(t_stack *stack_b)
 		temp = temp->next;
 	}
 	return (flag);
+}*/
+
+void better_moves (t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*temp;
+	int		better;
+	int		cost;
+	int		costarget;
+
+	temp = *stack_b;
+	better = MAX_INT;
+	while (temp)
+	{
+		if (absolute(temp->cost) + absolute(temp->costarget)< better)
+		{
+			better = absolute(temp->cost) + absolute(temp->costarget);
+			cost = temp->cost;
+			costarget = temp->costarget;
+		}
+		temp = temp->next;
+	}
+	moves(*stack_a, *stack_b);
 }
+
 /*
 int	better_move(t_stack *stack_a, t_stack *stack_b)
 {
