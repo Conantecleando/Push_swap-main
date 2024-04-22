@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/21 22:00:20 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/22 19:16:47 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ void printList(t_stack *head)
 		printf("\n");
 		printf(" costarget  ");
 		printf("%d", head->costarget);
+		printf("\n");
+		printf("pos");
+		printf("%d", head->pos);
 		printf("\n");
         head = head->next;
     }

@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:57:03 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/22 01:59:38 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/22 20:48:53 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_stack	*new_stack(long value)
 	first->value = value;
 	first->cost = 0;
 	first->costarget = 0;
-	first->pos = 0;
+	first->target = 0;
 	first->next = NULL;
 	return (first);
 }

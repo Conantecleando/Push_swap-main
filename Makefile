@@ -6,7 +6,7 @@
 #    By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 13:26:33 by davidrol          #+#    #+#              #
-#    Updated: 2024/04/21 06:10:32 by daroldan         ###   ########.fr        #
+#    Updated: 2024/04/22 21:32:32 by daroldan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ CFLAGS		= -Wall -Werror -Wextra -I ./src
 RM			=	rm -f
 #Sources Files
 SRC			=	$(SRC_DIR)push_swap.c\
+				$(SRC_DIR)rotate.c\
+				$(SRC_DIR)clean_stack.c\
 				$(SRC_DIR)sort_list.c\
 				$(SRC_DIR)stack_create.c\
 				$(SRC_DIR)stack_nodes.c\
