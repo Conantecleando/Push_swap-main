@@ -26,10 +26,7 @@ void printList(t_stack *head)
 		printf(" costarget  ");
 		printf("%d", head->costarget);
 		printf("\n");
-		printf("pos");
-		printf("%d", head->pos);
-		printf("\n");
-        head = head->next;
+		head = head->next;
     }
     printf("\n");
 }
