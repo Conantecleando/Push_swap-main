@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/24 20:51:45 by ribana-b         ###   ########.com      */
+/*   Updated: 2024/04/22 19:16:47 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 void printList(t_stack *head) 
 {
-	printf("==========================\n");
 	printf("Lista: \n");
     while (head != NULL) 
     {
-       	printf("Value: %ld\n", head->value);
-//        printf("Index: %d\n", head->index);
-//		printf("Cost: %d\n", head->cost);
-//		printf("Cost target: %d\n", head->costarget);
+       	printf("%ld\n", head->value);
+		printf(" index  ");
+        printf("%d", head->index);
+        printf(" cost  ");
+		printf("%d", head->cost);
+		printf("\n");
+		printf(" costarget  ");
+		printf("%d", head->costarget);
+		printf("\n");
 		head = head->next;
     }
-	printf("==========================\n");
+    printf("\n");
 }
 // Copiado del ft_split.c para que se pueda utilizar
 // Otra solución es añadir la función en el libft.h
