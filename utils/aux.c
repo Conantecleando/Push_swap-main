@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_movement.c                                   :+:      :+:    :+:   */
+/*   aux.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 12:55:02 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/08 21:40:55 by daroldan         ###   ########.fr       */
+/*   Created: 2024/04/21 01:20:26 by daroldan          #+#    #+#             */
+/*   Updated: 2024/04/21 01:24:05 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack *stack_a, bool print)
+int	absolute(int nbr)
 {
-	swap_stack(stack_a)
-	if (print)
-		write(1, "sa", 2);
+	if (nbr < 0)
+		return (nbr * -1);
+	return (nbr);
 }

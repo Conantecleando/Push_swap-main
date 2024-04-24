@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:49:35 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/15 11:55:20 by ribana-b         ###   ########.com      */
+/*   Updated: 2024/04/24 21:26:18 by ribana-b         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,14 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
-	else if (argc > 2)
+	else if (argc >= 2)
 		trans_list(argc, argv, &stack_a);
 	sort(&stack_a, &stack_b);
-	if(list_ok(stack_a))
-		return (0);
-	//find_max_value(stack_a)
+	t_stack *temp = stack_a;
+	while (temp)
+	{
+		stack_a = stack_a->next;
+		free(temp);
+		temp = stack_a;
+	}
 }

@@ -6,7 +6,7 @@
 #    By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 13:26:33 by davidrol          #+#    #+#              #
-#    Updated: 2024/04/15 13:48:01 by ribana-b         ###   ########.com       #
+#    Updated: 2024/04/22 21:32:32 by daroldan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,13 @@ UTILS_DIR		= utils/
 OBJ_DIR		= obj/
 
 #Compiler and CFlags
-CC			= gcc
-CFLAGS		= -Wall -Werror -Wextra
+CC			= gcc -g
+CFLAGS		= -Wall -Werror -Wextra -I ./src
 RM			=	rm -f
 #Sources Files
 SRC			=	$(SRC_DIR)push_swap.c\
+				$(SRC_DIR)rotate.c\
+				$(SRC_DIR)clean_stack.c\
 				$(SRC_DIR)sort_list.c\
 				$(SRC_DIR)stack_create.c\
 				$(SRC_DIR)stack_nodes.c\
@@ -33,6 +35,8 @@ UTILS		=	$(UTILS_DIR)change_index_list.c\
 				$(UTILS_DIR)cost.c\
 				$(UTILS_DIR)error.c\
 				$(UTILS_DIR)utils_push.c\
+				$(UTILS_DIR)aux.c\
+				$(UTILS_DIR)moves_stacks.c\
 
 #Apply the pattern substitition to each source file in SRC and produce a corresponding list of object file in the OBJ_DIR
 OBJ			=	$(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRC)) \

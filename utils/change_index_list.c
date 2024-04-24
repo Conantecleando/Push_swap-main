@@ -3,30 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   change_index_list.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davidrol <davidrol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 00:29:44 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/15 12:01:27 by ribana-b         ###   ########.com      */
+/*   Updated: 2024/04/22 20:41:09 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
-void	new_index(t_stack **stack)
+void	new_index(t_stack *stack)
 {
-	t_stack	*temp;
 	int		i;
 
-	if (!*stack)
-		return ;
-	temp = *stack;
 	i = -1;
-	while (temp)
+	while (stack)
 	{
-		temp->index = ++i;
-		temp = temp->next;
+		stack->index = ++i;
+		stack = stack->next;
 	}
-	return ;
 }
 
 void	plus_index_list(t_stack **stack)
@@ -41,7 +36,6 @@ void	plus_index_list(t_stack **stack)
 		temp->index++;
 		temp = temp->next;
 	}
-	return ;
 }
 
 void	minus_index_list(t_stack **stack)
@@ -56,5 +50,4 @@ void	minus_index_list(t_stack **stack)
 		temp->index--;
 		temp = temp->next;
 	}
-	return ;
 }
