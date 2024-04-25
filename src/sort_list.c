@@ -41,44 +41,40 @@ void	sort_three(t_stack **stack_a)
 
 void	sort_longer(t_stack **stack_a, t_stack **stack_b)
 {
-	int		max;
 	int		len;
 
 	len = stack_len(*stack_a);
+	if (list_ok(*stack_a))
+		return ;
 	while (len >= 4)
 	{
-		max = find_average_value(*stack_a);
-		while ((*stack_a)->value < max / 2)
+		if ((*stack_a)->value < find_average_value(*stack_a))
+			push(stack_a, stack_b, 'b');
+		else
 			rotate_stack(stack_a, 'a');
-		push(stack_a, stack_b, 'b');
-		len--;
+		if (list_ok(*stack_a))
+			break ;
+		len = stack_len(*stack_a);
 	}
-	printList(*stack_a);
-	printList(*stack_b);
 	sort_three(stack_a);
-	//printf("aqui empieza");
-	//printf("aqui termina");
-	while (stack_b)
+	while (*stack_b)
 	{
 		new_index(*stack_a);
 		new_index(*stack_b);
-		printList(*stack_a);
-		target(stack_a, stack_b);
-		cost_push(stack_a, stack_b);
-		better_moves(*stack_a, *stack_b);
-		printList(*stack_a);
-		printList(*stack_b);
+		target(*stack_a, *stack_b);
+		cost_push(*stack_a, *stack_b);
+		moves(stack_a, stack_b, better_moves(*stack_b));
 	}
+	while (!list_ok(*stack_a))
+		reverse_rotate_stack(stack_a, 'a');
 }
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
-	if (stack_len(*stack_a) < 4 && stack_len(*stack_b) == 0
-		&& list_ok(*stack_a))
-	{
-		write(2, "list is ok\n", 12);
+	if (list_ok(*stack_a))
 		return ;
-	}
+	else if (stack_len(*stack_a) == 2)
+		swap_stack(stack_a);
 	else if (stack_len(*stack_a) < 4 && stack_len(*stack_b) == 0
 		&& !list_ok(*stack_a))
 		sort_three(stack_a);

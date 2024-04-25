@@ -12,55 +12,37 @@
 
 #include "push_swap.h"
 
-void	moves(t_stack *stack_a, t_stack *stack_b)
+void	moves(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
 {
-	if (stack_b->costarget < 0 && stack_b->cost < 0)
-		rrr(&stack_a, &stack_b);
-	else if (stack_b->costarget > 0 && stack_b->cost > 0)
-		rr(&stack_a, &stack_b);
-	else if (stack_b->costarget == 0 && stack_b->cost == 0)
-		push(&stack_b, &stack_a, 'a');
-	else if (stack_b->costarget < 0)
-		reverse_rotate_stack(&stack_a, 'a');
-	else if (stack_b->costarget > 0)
-		rotate_stack(&stack_a, 'a');
-	else if (stack_b->cost < 0)
-		reverse_rotate_stack(&stack_b, 'b');
-	else if (stack_b->cost > 0)
-		rotate_stack(&stack_b, 'b');
+	if (cheap->costarget < 0 && cheap->cost < 0)
+		rrr(stack_a, stack_b);
+	else if (cheap->costarget > 0 && cheap->cost > 0)
+		rr(stack_a, stack_b);
+	else if (cheap->costarget == 0 && cheap->cost == 0)
+		push(stack_b, stack_a, 'a');
+	else if (cheap->costarget < 0)
+		reverse_rotate_stack(stack_a, 'a');
+	else if (cheap->costarget > 0)
+		rotate_stack(stack_a, 'a');
+	else if (cheap->cost < 0)
+		reverse_rotate_stack(stack_b, 'b');
+	else if (cheap->cost > 0)
+		rotate_stack(stack_b, 'b');
 }
 
-void better_moves (t_stack *stack_a, t_stack *stack_b)
+t_stack *better_moves(t_stack *stack_b)
 {
 	t_stack	*temp;
-	int		better;
-	int		cost;
-	int		costarget;
+	t_stack *cheap;
 
 	temp = stack_b;
-	better = MAX_INT;
+	cheap = temp;
 	while (temp)
 	{
-		if (absolute(temp->cost) + absolute(temp->costarget)< better)
-		{
-			better = absolute(temp->cost) + absolute(temp->costarget);
-			cost = temp->cost;
-			costarget = temp->costarget;
-		}
+		if (absolute(temp->costarget) + absolute(temp->cost)
+			< absolute(cheap->costarget) + absolute(cheap->cost))
+			cheap = temp;
 		temp = temp->next;
 	}
-	if (stack_b->costarget < 0 && stack_b->cost < 0)
-		rrr(&stack_a, &stack_b);
-	else if (stack_b->costarget > 0 && stack_b->cost > 0)
-		rr(&stack_a, &stack_b);
-	else if (stack_b->costarget == 0 && stack_b->cost == 0)
-		push(&stack_b, &stack_a, 'a');
-	else if (stack_b->costarget < 0)
-		reverse_rotate_stack(&stack_a, 'a');
-	else if (stack_b->costarget > 0)
-		rotate_stack(&stack_a, 'a');
-	else if (stack_b->cost < 0)
-		reverse_rotate_stack(&stack_b, 'b');
-	else if (stack_b->cost > 0)
-		rotate_stack(&stack_b, 'b');;
+	return (cheap);
 }

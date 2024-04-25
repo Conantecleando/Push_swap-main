@@ -13,15 +13,15 @@
 #include "../src/push_swap.h"
 
 //aqui hay que empezar a calcular costes teniendo en cuenta el target objetivo
-void	cost_push(t_stack **stack_a, t_stack **stack_b)
+void	cost_push(t_stack *stack_a, t_stack *stack_b)
 {
 	int		len_b;
 	int		len_a;
 	t_stack	*temp_b;
 
-	temp_b = *stack_b;
-	len_a = stack_len(*stack_a);
-	len_b = stack_len(*stack_b);
+	temp_b = stack_b;
+	len_a = stack_len(stack_a);
+	len_b = stack_len(stack_b);
 	while (temp_b)
 	{
 		temp_b->cost = temp_b->index;
@@ -34,11 +34,11 @@ void	cost_push(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-static void	get_target(t_stack **stack_a, int *target, int value, int limit)
+static void	get_target(t_stack *stack_a, int *target, int value, int limit)
 {
 	t_stack	*tmp;
 
-	tmp = *stack_a;
+	tmp = stack_a;
 	while (tmp)
 	{
 		if (value < tmp->value && tmp->value < limit)
@@ -50,7 +50,7 @@ static void	get_target(t_stack **stack_a, int *target, int value, int limit)
 	}
 	if (limit != MAX_INT)
 		return ;
-	tmp = *stack_a;
+	tmp = stack_a;
 	while (tmp)
 	{
 		if (tmp->value < limit)
@@ -62,21 +62,21 @@ static void	get_target(t_stack **stack_a, int *target, int value, int limit)
 	}
 }
 
-void	target(t_stack **stacka, t_stack **stackb)
+void	target(t_stack *stacka, t_stack *stackb)
 {
 	t_stack	*temp_b;
 	t_stack *temp_a;
 	int 	target;
 
-	temp_a = *stacka;
-	temp_b = *stackb;
+	temp_a = stacka;
+	temp_b = stackb;
 	target = 0;
 	while (temp_b)
 	{
 		if (temp_b->value == MAX_INT)
-			target = stack_len(*stacka);
+			target = stack_len(stacka);
 		else
-			get_target(&temp_a, &target, (int)temp_b->value, MAX_INT);
+			get_target(temp_a, &target, (int)temp_b->value, MAX_INT);
 		temp_b->target = target;
 		temp_b = temp_b->next;
 	}
