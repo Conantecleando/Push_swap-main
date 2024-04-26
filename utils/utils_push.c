@@ -6,32 +6,12 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 23:08:04 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/22 19:16:47 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/26 10:04:05 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void printList(t_stack *head) 
-{
-	printf("Lista: \n");
-    while (head != NULL) 
-    {
-       	printf("%ld\n", head->value);
-		printf(" index  ");
-        printf("%d", head->index);
-        printf(" cost  ");
-		printf("%d", head->cost);
-		printf("\n");
-		printf(" costarget  ");
-		printf("%d", head->costarget);
-		printf("\n");
-		head = head->next;
-    }
-    printf("\n");
-}
-// Copiado del ft_split.c para que se pueda utilizar
-// Otra solución es añadir la función en el libft.h
 static void	free_ptr(char **ptr, int t)
 {
 	t = 0;
@@ -74,7 +54,10 @@ void	trans_list(int argc, char **argv, t_stack **stack_a)
 	{
 		list = ft_split(argv[i++], ' ');
 		if ((type_error(list)) == 0)
+		{
+			write(1, "Error\n", 6);
 			exit(EXIT_FAILURE);
+		}
 		list_to_stack(list, stack_a);
 		free_ptr(list, 0);
 	}
@@ -92,5 +75,8 @@ void	list_to_stack(char **list, t_stack **stack_a)
 		insert_end_list(stack_a, ft_atol(list[z++]));
 	}
 	if ((double_number_error(*stack_a)) == 0)
+	{
+		write(1, "Error\n", 6);
 		exit(EXIT_FAILURE);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:48:18 by daroldan          #+#    #+#             */
-/*   Updated: 2024/03/27 22:31:25 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/26 09:44:50 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ int	ft_atoi(const char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-		z = -1;
+			z = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-			result = ((result * 10) + (str[i] - '0'));
-			i++;
+		result = ((result * 10) + (str[i] - '0'));
+		i++;
 	}
 	return (result * z);
 }

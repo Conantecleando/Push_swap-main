@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 02:17:23 by daroldan          #+#    #+#             */
-/*   Updated: 2024/04/22 22:46:21 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/26 09:26:41 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void	moves(t_stack **stack_a, t_stack **stack_b, t_stack *cheap)
 		rotate_stack(stack_b, 'b');
 }
 
-t_stack *better_moves(t_stack *stack_b)
+t_stack	*better_moves(t_stack *stack_b)
 {
 	t_stack	*temp;
-	t_stack *cheap;
+	t_stack	*cheap;
 
 	temp = stack_b;
 	cheap = temp;

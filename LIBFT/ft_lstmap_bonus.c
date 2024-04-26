@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 03:31:30 by daroldan          #+#    #+#             */
-/*   Updated: 2023/06/26 19:56:03 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/26 09:45:59 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	final = temp;
 	lst = lst->next;
 	while (lst)
-	{	
+	{
 		temp->next = ft_lstnew(f(lst->content));
 		if (!temp->next)
 		{

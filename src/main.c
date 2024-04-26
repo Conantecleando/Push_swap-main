@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 21:49:35 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/21 21:57:08 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:02:22 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,16 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	t_stack	*temp;
 
 	stack_b = NULL;
 	stack_a = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
+		return (0);
 	else if (argc >= 2)
 		trans_list(argc, argv, &stack_a);
 	sort(&stack_a, &stack_b);
-	t_stack *temp = stack_a;
+	temp = stack_a;
 	while (temp)
 	{
 		stack_a = stack_a->next;

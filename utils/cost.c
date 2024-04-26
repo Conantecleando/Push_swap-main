@@ -6,7 +6,7 @@
 /*   By: daroldan < daroldan@student.42malaga.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 21:24:31 by davidrol          #+#    #+#             */
-/*   Updated: 2024/04/22 22:52:06 by daroldan         ###   ########.fr       */
+/*   Updated: 2024/04/26 09:30:04 by daroldan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ static void	get_target(t_stack *stack_a, int *target, int value, int limit)
 
 void	target(t_stack *stacka, t_stack *stackb)
 {
+	int		target;
 	t_stack	*temp_b;
-	t_stack *temp_a;
-	int 	target;
+	t_stack	*temp_a;
 
 	temp_a = stacka;
 	temp_b = stackb;
